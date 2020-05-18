@@ -1,0 +1,10 @@
+insert into ua_plugin_info (SCRIPTID, SCRIPTPATH, SCRIPTNAME, ADAPTOS, SCRIPTNOTE, CREATOR, SCRIPTTYPE, CREATERTIME, UPDATOR, UPDATETIME, ISFORMAT, MPOINTCLASS, EXE_STRING2, EXE_STRING3, PYTHONVERSION, APPID)
+values ('host/linux/proc/procio.py', 'host/linux/proc', 'procio.py', 'linux', '采集进程IO的输入和输出大小', 'root', 'python', 1560753309923, null, 1560753309923, 1, 'HOST', null, null, '2.6', 'global');
+
+insert into ua_script2kpi (APPID, SCRIPTID, KPI_ID, KPI_CN_NAME, KPI_EN_NAME, KPI_UNIT, KPI_CATEGORY, KPI_PROCESS)
+values ('global', 'host/linux/proc/procio.py', 'PM-00-01-01-06-10', '进程IO输入', 'ProIOin', 'Byte', '主机.Linux.进程', null);
+insert into ua_script2kpi (APPID, SCRIPTID, KPI_ID, KPI_CN_NAME, KPI_EN_NAME, KPI_UNIT, KPI_CATEGORY, KPI_PROCESS)
+values ('global', 'host/linux/proc/procio.py', 'PM-00-01-01-06-11', '进程IO输出', 'ProIOout', 'Byte', '主机.Linux.进程', null);
+
+insert into ua_script_param (SCRIPTID, PARAMETERNAME, PARAMETERDESCR, PARAMETERDATATYPE, PARAMETERDATASCOPE, ISREQUIRED, ISENCRYPTED, DEFAULTVALUE, EXECSEQUENCE, VIEWSEQUENCE, NOTE, EXE_STRING1, EXE_STRING2, EXE_STRING3, ISMAIN, APPID)
+values ('host/linux/proc/procio.py', 'procName', '进程名关键字', '字符型', null, 1, 0, null, 1, 1, '进程关键字，例如agent', null, null, null, 0, 'global');

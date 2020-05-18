@@ -1,0 +1,848 @@
+C:\Python27\python.exe D:/PycharmProjects/hello/富贵html_auto/auto.py
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>DIY卡免还款签账额20元 【价格 型号 图片 参数】-广发商城</title>
+    <meta name="description" content="广发商城提供最新&quot;DIY卡免还款签账额20元&quot;信息。积分商城24小时服务专线：4008895508-1  广发商城服务专线：4008895508-2">
+    <meta name="keywords" content="DIY卡免还款签账额20元 ,广发商城">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/styles/layout/layout-lay-4a777bc6f3.css">
+    <link rel="stylesheet" href="/assets/styles/layout/font-awesome-346abc0338.css">
+    <link rel="stylesheet" href="/assets/styles/app-91fe3efaf6.css">
+</head>
+<body>
+<div class="body-mode">
+</div>
+<!--[if lt IE 7]>
+<p class="browsehappy">您正使用<strong>过时</strong>的浏览器，因此您可能体验不到最好的效果,请升级您的浏览器
+</p>
+<![endif]-->
+<!--[if lt IE 8]>
+<script src="/assets/scripts/ie8/ieBetter.js"></script><![endif]-->
+
+    <div class="topnav js-component spirit-component" data-comp-path="common/topnav" >
+    <div class="navbar navbar-top">
+        <div class="navbar-collapse" style="width: 1180px;">
+            <div class="navbar-header">
+                <span><a href="http://card.cgbchina.com.cn/Channel/11712350"
+                         target="_blank" class="text-hover-black">立即申请广发信用卡</a></span>
+                <label class="header-welcome"><span id="js-user-name"></span><span class="js-user-start" id="js-user-start"></span><span id="js-time"></span><span class="">好，欢迎来到广发银行网上商城！</span></label>
+                <span id="js-user-action" data-hrefmain="http://shop.cgbchina.com.cn"></span>
+            </div>
+            <ul>
+                <li>
+                    <span rel="nofollow" class="header-my"><a href="/mall/user/personal-center" class="js-my-center"><i class="icon-personal"></i>个人中心
+                        <i class="icon-arrow-bottom"></i></a>
+                    <div class="header-my-box">
+                        <ul class="link-box clearfix">
+                            <li><a href="/mall/user/myorder/order_all?curStatusId=0308" class="text-hover-black">已付款</a></li>
+                            <li><a href="/mall/user/myorder/order_all?curStatusId=0301" class="text-hover-black">未付款</a></li>
+                            <li><a href="/mall/user/myMessages/myMessages-all" class="text-hover-black ">新消息</a></li>
+                            <li><a href="/mall/user/my-coupon" class="text-hover-black">优惠券</a></li>
+                        </ul>
+                        <div class="title">我的足迹 <span><a href="/mall/user/history"
+                                                         class="text-hover-black">更多 ></a></span></div>
+                        <ul class="browse-img">
+                        </ul>
+                    </div>
+                    </span>
+
+                </li>
+                <li id="header-cart">
+                    <a rel="nofollow" href="http://shop.cgbchina.com.cn/mall/user/myorder/order_all"><i class="icon-order"></i>我的订单</a>
+                </li>
+                <li rel="nofollow" >
+                    <a href="http://shop.cgbchina.com.cn/mall/user/myaftermarket/aftermarket_all"><i class="icon-afterMarket"></i>我的售后</a>
+                </li>
+                <li rel="nofollow" >
+                    <a href="http://shop.cgbchina.com.cn/mall/user/myFavorite"><i class="icon-favorite"></i>我的收藏夹</a>
+                </li>
+                <li class="browse-nav">
+                    <a rel="nofollow" id="js-add-to-favorite" href="javascript:void(0)"><i class="icon-sitemap"></i>网站导航</a>
+                    <div class="header-sitemap-box">
+                        <dl class="fore1">
+                            <dt>电脑办公</dt>
+                            <dd>
+                                
+                                <div class="item" title="台式电脑"><a href="http://shop.cgbchina.com.cn/mall/search?fcid=514" target="_blank">台式电脑</a></div>
+                                
+                                <div class="item" title="笔记本"><a href="http://shop.cgbchina.com.cn/mall/search?fcid=515" target="_blank">笔记本</a></div>
+                                
+                                <div class="item" title="平板电脑"><a href="http://shop.cgbchina.com.cn/mall/search?fcid=516" target="_blank">平板电脑</a></div>
+                                
+                                <div class="item" title="外设配件"><a href="http://shop.cgbchina.com.cn/mall/search?fcid=517" target="_blank">外设配件</a></div>
+                                
+                                <div class="item" title="办公设备"><a href="http://shop.cgbchina.com.cn/mall/search?fcid=519" target="_blank">办公设备</a></div>
+                                
+                                <div class="item" title="文具耗材"><a href="http://shop.cgbchina.com.cn/mall/search?fcid=520" target="_blank">文具耗材</a></div>
+                                
+                            </dd>
+                        </dl>
+                        <dl class="fore2">
+                            <dt>家用电器</dt>
+                            <dd>
+                                
+                                    <div class="item" title="厨房电器"><a href="http://shop.cgbchina.com.cn/mall/search?fcid=522" target="_blank">厨房电器</a></div>
+                                
+                                    <div class="item" title="大家电"><a href="http://shop.cgbchina.com.cn/mall/search?fcid=523" target="_blank">大家电</a></div>
+                                
+                                    <div class="item" title="生活电器"><a href="http://shop.cgbchina.com.cn/mall/search?fcid=547" target="_blank">生活电器</a></div>
+                                
+                            </dd>
+                        </dl>
+                        <dl class="fore3">
+                            <dt>积分兑换</dt>
+                            <dd>
+                                
+                                    <div class="item" title="白金卡专区"><a href="http://shop.cgbchina.com.cn/mall/integrate/platinum" target="_blank">白金卡专区</a></div>
+                                
+                                    <div class="item" title="希望卡专区"><a href="http://shop.cgbchina.com.cn/mall/integrate/hopecard" target="_blank">希望卡专区</a></div>
+                                
+                                    <div class="item" title="增值服务专区"><a href="http://shop.cgbchina.com.cn/mall/integrate/zengzhi" target="_blank">增值服务专区</a></div>
+                                
+                            </dd>
+                        </dl>
+                        <dl class="fore4">
+                            <dt>个护化妆</dt>
+                            <dd>
+                                
+                                    <div class="item" title="护肤"><a href="http://shop.cgbchina.com.cn/mall/search?fcid=620" target="_blank">护肤</a></div>
+                                
+                                    <div class="item" title="彩妆"><a href="http://shop.cgbchina.com.cn/mall/search?fcid=621" target="_blank">彩妆</a></div>
+                                
+                                    <div class="item" title="用具"><a href="http://shop.cgbchina.com.cn/mall/search?fcid=622" target="_blank">用具</a></div>
+                                
+                            </dd>
+                        </dl>
+                    </div>
+                </li>
+            </ul>
+            <div style="clear: both;"></div>
+        </div>
+    </div>
+</div>
+    <div class="user-header">
+        <div class="header-logo js-component spirit-component" data-comp-path="common/header-logo" >
+    <div class="img-left">
+        <a href="http://shop.cgbchina.com.cn/mall/integrate" data-href="http://shop.cgbchina.com.cn/mall/integrate" id="main-logo">
+            <i class="icon-header-logo2" alt="广发银行网上商城"
+               title="广发银行网上商城"></i></a>
+    </div>
+</div>
+
+        <div class="sites-header header js-component spirit-component" data-comp-path="common/header" >
+    <form class="form form-search " type="get" id="form-search" action="http://shop.cgbchina.com.cn/mall/search"
+          data-hrefbase="http://shop.cgbchina.com.cn">
+        <fieldset>
+            
+                
+                    <input type="text"  maxlength="80"  data-default="iPhone X全面屏" class="safari-input-line-height search-input has-name" value="iPhone X全面屏" name="keywords" placeholder="输入您需要搜索商品的关键字">
+                
+            
+            <button class="btn header-search-btn" id="search-button" type="submit">搜&nbsp;索</button>
+        </fieldset>
+            
+        <div class="search-hot">
+        <ul class="search-hot-ul">
+            
+                <li><a class="text-hover-gray"
+
+                       href="http://shop.cgbchina.com.cn/mall/search?keywords=X%E5%85%A8%E9%9D%A2%E5%B1%8F%E6%89%8B%E6%9C%BA"
+                       target="_blank">X全面屏手机</a>|</li>
+            
+                <li><a class="text-hover-gray"
+
+                       href="http://shop.cgbchina.com.cn/mall/search?keywords=%E6%97%85%E8%A1%8C%E7%AE%B1%E6%8B%89%E6%9D%86%E7%AE%B1"
+                       target="_blank">旅行箱拉杆箱</a>|</li>
+            
+                <li><a class="text-hover-gray"
+
+                       href="http://shop.cgbchina.com.cn/mall/search?keywords=%E4%B9%9D%E9%98%B3%E5%93%81%E7%89%8C%E9%A6%86"
+                       target="_blank">九阳品牌馆</a>|</li>
+            
+                <li><a class="text-hover-gray"
+
+                       href="http://shop.cgbchina.com.cn/mall/search?keywords=%E7%BE%8E%E7%9A%84%E5%93%81%E7%89%8C%E5%BA%97"
+                       target="_blank">美的品牌店</a>|</li>
+            
+                <li><a class="text-hover-gray"
+
+                       href="http://shop.cgbchina.com.cn/mall/search?keywords=Apple%E7%89%B9%E6%83%A0"
+                       target="_blank">Apple特惠</a></li>
+            
+        </ul>
+        </div>
+            
+    </form>
+    <input type="hidden" name="businessType" value="YG">
+</div>
+        <div class="header-cart js-component spirit-component" data-comp-path="common/header_cart" >
+    <a href="/mall/buyer/cart" data-count="null"><i class="icon-header-cart"></i>我的购物车
+        <i class="icon-cart-arrow icons-cart-arrow"></i><i
+                class="icon-cart-num-bg icons-cart-num"></i>
+        <i class=" icons-cart-num">
+            <span class="cart-num"></span>
+        </i>
+    </a>
+</div>
+
+    </div>
+    <div class="main">
+        <div class="gift-detail js-component spirit-component" data-comp-path="point_item/gift_detail" >
+    <div class="mainnav-point navbar js-component spirit-component" data-comp-path="common/mainnav_point" >
+    <div class="navbar-collapse big-size"
+         data-href="http://shop.cgbchina.com.cn">
+        <ul class="category-ul category-for-bdetail">
+            <li class="home-channel-container  all-category">
+                <div class="navbar-desc">
+                    <i class="icon-all-category"></i>
+                    <a class="all-category-show" href="javascript:void(0);">全部商品分类<i
+                            class="icon-whitearrow-bottom"></i></a>
+                </div>
+                <div class="home-channel disappear">
+                    <div class="categorys" data-data="[]" data-test="[{&quot;id&quot;:132,&quot;index&quot;:1,&quot;link&quot;:&quot;http://shop.cgbchina.com.cn/mall/search?fcid=132&quot;,&quot;image1&quot;:&quot;http://shop.cgbchina.com.cn/img/M00/00/1C/CsgCl1h3Qn2AJfdhAAAcU5EeOug794.jpg&quot;,&quot;href1&quot;:&quot;http://shop.cgbchina.com.cn/mall/goods/01160429175323417671?itemCode=01160429175323417671&quot;,&quot;image2&quot;:&quot;http://shop.cgbchina.com.cn/img/M00/00/1C/CsgCmFh3QoGAJtQqAAAcdlJ0DOE448.jpg&quot;,&quot;href2&quot;:&quot;http://shop.cgbchina.com.cn/mall/goods/01161118140841515429?itemCode=01161118140841515429&quot;,&quot;image3&quot;:&quot;http://shop.cgbchina.com.cn/img/M00/00/01/CsgDV1h3QoaAY3QGAAAc3Q-vhYo586.jpg&quot;,&quot;href3&quot;:&quot;http://shop.cgbchina.com.cn/mall/item/brand-detail?brandId=111&quot;,&quot;image4&quot;:&quot;http://shop.cgbchina.com.cn/img/M00/00/01/CsgDWFh3QomAA7UFAAAQVYKA1M0523.jpg&quot;,&quot;href4&quot;:&quot;http://shop.cgbchina.com.cn/mall/item/brand-detail?brandId=155&quot;},{&quot;id&quot;:133,&quot;index&quot;:2,&quot;link&quot;:&quot;http://shop.cgbchina.com.cn/mall/search?fcid=133&quot;,&quot;image1&quot;:&quot;http://shop.cgbchina.com.cn/img/M00/00/1C/CsgCl1h3Qn2AJfdhAAAcU5EeOug794.jpg&quot;,&quot;href1&quot;:&quot;http://shop.cgbchina.com.cn/mall/goods/01160429175323417671?itemCode=01160429175323417671&quot;,&quot;image2&quot;:&quot;http://shop.cgbchina.com.cn/img/M00/00/1C/CsgCmFh3QoGAJtQqAAAcdlJ0DOE448.jpg&quot;,&quot;href2&quot;:&quot;http://shop.cgbchina.com.cn/mall/goods/01161118140841515429?itemCode=01161118140841515429&quot;,&quot;image3&quot;:&quot;http://shop.cgbchina.com.cn/img/M00/00/01/CsgDV1h3QoaAY3QGAAAc3Q-vhYo586.jpg&quot;,&quot;href3&quot;:&quot;http://shop.cgbchina.com.cn/mall/item/brand-detail?brandId=111&quot;,&quot;image4&quot;:&quot;http://shop.cgbchina.com.cn/img/M00/00/01/CsgDWFh3QomAA7UFAAAQVYKA1M0523.jpg&quot;,&quot;href4&quot;:&quot;http://shop.cgbchina.com.cn/mall/item/brand-detail?brandId=155&quot;},{&quot;id&quot;:134,&quot;index&quot;:3,&quot;link&quot;:&quot;http://shop.cgbchina.com.cn/mall/search?fcid=134&quot;,&quot;image1&quot;:&quot;http://shop.cgbchina.com.cn/img/M00/00/1C/CsgCl1h3Qn2AJfdhAAAcU5EeOug794.jpg&quot;,&quot;href1&quot;:&quot;http://shop.cgbchina.com.cn/mall/goods/01160429175323417671?itemCode=01160429175323417671&quot;,&quot;image2&quot;:&quot;http://shop.cgbchina.com.cn/img/M00/00/1C/CsgCmFh3QoGAJtQqAAAcdlJ0DOE448.jpg&quot;,&quot;href2&quot;:&quot;http://shop.cgbchina.com.cn/mall/goods/01161118140841515429?itemCode=01161118140841515429&quot;,&quot;image3&quot;:&quot;http://shop.cgbchina.com.cn/img/M00/00/01/CsgDV1h3QoaAY3QGAAAc3Q-vhYo586.jpg&quot;,&quot;href3&quot;:&quot;http://shop.cgbchina.com.cn/mall/item/brand-detail?brandId=111&quot;,&quot;image4&quot;:&quot;http://shop.cgbchina.com.cn/img/M00/00/01/CsgDWFh3QomAA7UFAAAQVYKA1M0523.jpg&quot;,&quot;href4&quot;:&quot;http://shop.cgbchina.com.cn/mall/item/brand-detail?brandId=155&quot;},{&quot;id&quot;:135,&quot;index&quot;:4,&quot;link&quot;:&quot;http://shop.cgbchina.com.cn/mall/search?fcid=135&quot;,&quot;image1&quot;:&quot;http://shop.cgbchina.com.cn/img/M00/00/1C/CsgCl1h3Qn2AJfdhAAAcU5EeOug794.jpg&quot;,&quot;href1&quot;:&quot;http://shop.cgbchina.com.cn/mall/goods/01160429175323417671?itemCode=01160429175323417671&quot;,&quot;image2&quot;:&quot;http://shop.cgbchina.com.cn/img/M00/00/1C/CsgCmFh3QoGAJtQqAAAcdlJ0DOE448.jpg&quot;,&quot;href2&quot;:&quot;http://shop.cgbchina.com.cn/mall/goods/01161118140841515429?itemCode=01161118140841515429&quot;,&quot;image3&quot;:&quot;http://shop.cgbchina.com.cn/img/M00/00/01/CsgDV1h3QoaAY3QGAAAc3Q-vhYo586.jpg&quot;,&quot;href3&quot;:&quot;http://shop.cgbchina.com.cn/mall/item/brand-detail?brandId=111&quot;,&quot;image4&quot;:&quot;http://shop.cgbchina.com.cn/img/M00/00/01/CsgDWFh3QomAA7UFAAAQVYKA1M0523.jpg&quot;,&quot;href4&quot;:&quot;http://shop.cgbchina.com.cn/mall/item/brand-detail?brandId=155&quot;},{&quot;id&quot;:136,&quot;index&quot;:5,&quot;link&quot;:&quot;http://shop.cgbchina.com.cn/mall/search?fcid=136&quot;,&quot;image1&quot;:&quot;http://shop.cgbchina.com.cn/img/M00/00/1C/CsgCl1h3Qn2AJfdhAAAcU5EeOug794.jpg&quot;,&quot;href1&quot;:&quot;http://shop.cgbchina.com.cn/mall/goods/01160429175323417671?itemCode=01160429175323417671&quot;,&quot;image2&quot;:&quot;http://shop.cgbchina.com.cn/img/M00/00/1C/CsgCmFh3QoGAJtQqAAAcdlJ0DOE448.jpg&quot;,&quot;href2&quot;:&quot;http://shop.cgbchina.com.cn/mall/goods/01161118140841515429?itemCode=01161118140841515429&quot;,&quot;image3&quot;:&quot;http://shop.cgbchina.com.cn/img/M00/00/01/CsgDV1h3QoaAY3QGAAAc3Q-vhYo586.jpg&quot;,&quot;href3&quot;:&quot;http://shop.cgbchina.com.cn/mall/item/brand-detail?brandId=111&quot;,&quot;image4&quot;:&quot;http://shop.cgbchina.com.cn/img/M00/00/01/CsgDWFh3QomAA7UFAAAQVYKA1M0523.jpg&quot;,&quot;href4&quot;:&quot;http://shop.cgbchina.com.cn/mall/item/brand-detail?brandId=155&quot;},{&quot;id&quot;:137,&quot;index&quot;:6,&quot;link&quot;:&quot;http://shop.cgbchina.com.cn/mall/search?fcid=137&quot;,&quot;image1&quot;:&quot;http://shop.cgbchina.com.cn/img/M00/00/1C/CsgCl1h3Qn2AJfdhAAAcU5EeOug794.jpg&quot;,&quot;href1&quot;:&quot;http://shop.cgbchina.com.cn/mall/goods/01160429175323417671?itemCode=01160429175323417671&quot;,&quot;image2&quot;:&quot;http://shop.cgbchina.com.cn/img/M00/00/1C/CsgCmFh3QoGAJtQqAAAcdlJ0DOE448.jpg&quot;,&quot;href2&quot;:&quot;http://shop.cgbchina.com.cn/mall/goods/01161118140841515429?itemCode=01161118140841515429&quot;,&quot;image3&quot;:&quot;http://shop.cgbchina.com.cn/img/M00/00/01/CsgDV1h3QoaAY3QGAAAc3Q-vhYo586.jpg&quot;,&quot;href3&quot;:&quot;http://shop.cgbchina.com.cn/mall/item/brand-detail?brandId=111&quot;,&quot;image4&quot;:&quot;http://shop.cgbchina.com.cn/img/M00/00/01/CsgDWFh3QomAA7UFAAAQVYKA1M0523.jpg&quot;,&quot;href4&quot;:&quot;http://shop.cgbchina.com.cn/mall/item/brand-detail?brandId=155&quot;},{&quot;id&quot;:493,&quot;index&quot;:7,&quot;link&quot;:&quot;http://shop.cgbchina.com.cn/mall/search?fcid=493&quot;,&quot;image1&quot;:&quot;http://shop.cgbchina.com.cn/img/M00/00/04/CsgDWFh8ZDOAOyD7AAAcU5EeOug091.jpg&quot;,&quot;href1&quot;:&quot;http://shop.cgbchina.com.cn/mall/goods/01160429175323417671?itemCode=01160429175323417671&quot;,&quot;image2&quot;:&quot;http://shop.cgbchina.com.cn/img/M00/00/04/CsgDV1h8ZDmAfWEiAAAcdlJ0DOE139.jpg&quot;,&quot;href2&quot;:&quot;http://shop.cgbchina.com.cn/mall/goods/01161118140841515429?itemCode=01161118140841515429&quot;,&quot;image3&quot;:&quot;http://shop.cgbchina.com.cn/img/M00/00/04/CsgDWFh8ZDyAP6nqAAAc3Q-vhYo542.jpg&quot;,&quot;href3&quot;:&quot;http://shop.cgbchina.com.cn/mall/item/brand-detail?brandId=111&quot;,&quot;image4&quot;:&quot;http://shop.cgbchina.com.cn/img/M00/00/04/CsgDV1h8ZECALYdnAAAQVYKA1M0890.jpg&quot;,&quot;href4&quot;:&quot;http://shop.cgbchina.com.cn/mall/item/brand-detail?brandId=155&quot;},{&quot;id&quot;:496,&quot;index&quot;:8,&quot;link&quot;:&quot;http://shop.cgbchina.com.cn/mall/search?fcid=496&quot;,&quot;image1&quot;:&quot;http://shop.cgbchina.com.cn/img/M00/00/1C/CsgCl1h3Qn2AJfdhAAAcU5EeOug794.jpg&quot;,&quot;href1&quot;:&quot;http://shop.cgbchina.com.cn/mall/goods/01160429175323417671?itemCode=01160429175323417671&quot;,&quot;image2&quot;:&quot;http://shop.cgbchina.com.cn/img/M00/00/1C/CsgCmFh3QoGAJtQqAAAcdlJ0DOE448.jpg&quot;,&quot;href2&quot;:&quot;http://shop.cgbchina.com.cn/mall/goods/01161118140841515429?itemCode=01161118140841515429&quot;,&quot;image3&quot;:&quot;http://shop.cgbchina.com.cn/img/M00/00/01/CsgDV1h3QoaAY3QGAAAc3Q-vhYo586.jpg&quot;,&quot;href3&quot;:&quot;http://shop.cgbchina.com.cn/mall/item/brand-detail?brandId=111&quot;,&quot;image4&quot;:&quot;http://shop.cgbchina.com.cn/img/M00/00/04/CsgDV1h8ZECALYdnAAAQVYKA1M0890.jpg&quot;,&quot;href4&quot;:&quot;http://shop.cgbchina.com.cn/mall/item/brand-detail?brandId=155&quot;}]">
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    </div>
+                </div>
+            </li>
+            
+                <li>
+                    <div class="navbar-item"><a href="/mall/integrate/platinum" target="_blank"><span>白金卡专区</span></a></div>
+                </li>
+            
+                <li>
+                    <div class="navbar-item"><a href="/mall/integrate/hopecard" target="_blank"><span>希望卡专区</span></a></div>
+                </li>
+            
+                <li>
+                    <div class="navbar-item"><a href="/mall/integrate/zengzhi" target="_blank"><span>增值服务专区</span></a></div>
+                </li>
+            
+        </ul>
+        <div class="navbar-icon">
+            <div class="icon-400-tel"></div>
+        </div>
+    </div>
+</div>
+<!--[if lt IE 9]>
+<style type="text/css">
+    .category-li{
+        min-height: 10px;
+        filter:progid:DXImageTransform.Microsoft.Gradient(startColorstr=#e6f2f2f2,endColorstr=#e6f2f2f2);/* IE8 */
+    }
+</style>
+<![endif]-->
+<div>
+    <!--礼品型号展示区start-->
+    <div class="gd-container-up">
+        <!--礼品型号展示区start-->
+        <div class="gd-product-detail clearfix">
+            <div class="gift-info js-component spirit-component" data-comp-path="point_item/gift_info" >
+    <div>
+        <!--位置导航start-->
+        <ul class="gd-location">
+            <li class="text-hover-gray">当前位置：</li>
+            <li><a href="/mall/index" class="text-hover-gray">首页 &gt;</a></li>
+            
+                <li>DIY卡免还款签账额20元</li>
+            
+        </ul>
+        <!--位置导航end-->
+        <!--礼品图片展示区start-->
+        <div class="gd-img-show">
+            <div class="product-detail-img">
+                
+                    <div class="product-detail-img-big">
+                    
+                        <div class="icon-item-state icon-sold-out stock-zero-img"></div>
+                        <img class="js-bigImg detail-image stock-zero" data-original="">
+                    
+                    </div>
+                    <div class="product-detail-img-list">
+                        <ul>
+                            <li class="detail-image1-li">
+                                <img class="js-imgUnit detail-image1 on" data-src="" data-original="">
+                            </li>
+                            <li class="detail-image2-li">
+                                <img class="js-imgUnit detail-image2" data-src="" data-original="">
+                            </li>
+                            <li class="detail-image3-li">
+                                <img class="js-imgUnit detail-image3" data-src="" data-original="">
+                            </li>
+                            <li class="detail-image4-li">
+                                <img class="js-imgUnit detail-image4" data-src="" data-original="">
+                            </li>
+                            <li class="detail-image5-li">
+                                <img class="js-imgUnit detail-image5" data-src="" data-original="">
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="product-detail-code row-grid-left">单品编码： <span class="js-itemcode"
+                                                                               data-value="03140714143403208122">12783</span>
+                    </div>
+                
+                <!--分享收藏-->
+                <div class="share-collection js-component spirit-component" data-comp-path="item/share_collection" >
+    
+        <div class="product-detail-sns row-grid-right clearfix ">
+    
+        <div class = "share-pop">
+            <div class="sharediv">
+                <div class="sharediv-title"><span style="margin-left: 8px;font-size: 10px">分享到</span></div>
+                <div class = "weibo sharediv-v">
+                    <i class="sharediv-ico icon-weibo"></i><span class="sharediv-name">新浪微博</span>
+                </div>
+                <div class = "wechat sharediv-v" >
+                    <i class="sharediv-ico icon-wechat"></i><span class="sharediv-name">微信分享</span>
+                </div>
+                <div class="tencent sharediv-v" >
+                    <i class="sharediv-ico icon-tencent"></i><span class="sharediv-name">腾讯微博</span>
+                </div>
+            </div>
+            <div  class="bdsharebuttonbox row-grid-left text-hover-black img-share-black bds_more" data-cmd="more">
+                <i class="icon-detail-arrow02 img-share"></i>
+                分享
+            </div>
+        </div>
+        <div class = "collect-left">
+            <a class="row-grid-right text-hover-black">
+                <span class="getCollect"><i class="icon-detail-arrow03 img-collection"></i>收藏商品</span>
+                <span class="offCollect collect-hidden"><i class="icon-detail-arrow03 img-collection "></i>取消收藏</span>
+            </a>
+        </div>
+    </div>
+</div>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <!--礼品图片展示区end-->
+        <!--礼品型号付款展示区start-->
+        <div class="product-detail-content">
+            <!--礼品文字描述-->
+            
+                <div class="gd-describe">
+                    <div class="gd-describe-minheight">
+                        <div class="product-detail-content-title" title="DIY卡免还款签账额20元">DIY卡免还款签账额20元</div>
+                        <!--<div class="product-detail-content-title-text"-->
+                             <!--title=""></div>-->
+                        <div class="product-detail-content-title-text js-adWord" data-value=""
+                             title="">卖点：</div>
+                        <div class="product-detail-content-title-text js-giftDesc" data-value="  "
+                             title="  ">赠品：  </div>
+                    </div>
+                    <div class="product-detail-content-summary">
+                    </div>
+                </div>
+            
+            <!--单品选择-->
+            <div class="gift-item" data-goods-type="01" data-value="普通积分" data-chose-item-dto="{&quot;code&quot;:&quot;03140714143403208122&quot;,&quot;goodsCode&quot;:&quot;03140714143403208122&quot;,&quot;price&quot;:1.00,&quot;stock&quot;:0,&quot;stockWarning&quot;:5721,&quot;image1&quot;:&quot;http://shop.cgbchina.com.cn/img/eshop/eshop/goods/03140714143403208122/images/03140714143403208122_1.jpg&quot;,&quot;goodsTotal&quot;:6900371,&quot;stickFlag&quot;:0,&quot;stickOrder&quot;:999999999,&quot;delFlag&quot;:&quot;0&quot;,&quot;createOper&quot;:&quot;02020201&quot;,&quot;createTime&quot;:1405319643000,&quot;modifyOper&quot;:&quot;100016926223&quot;,&quot;modifyTime&quot;:1576200499000,&quot;xid&quot;:&quot;12783&quot;,&quot;preinstallStock&quot;:0,&quot;maxPoint&quot;:0,&quot;cardLevelId&quot;:&quot;00&quot;,&quot;prefuctureId&quot;:&quot;03&quot;,&quot;virtualLimit&quot;:0,&quot;virtualLimitDays&quot;:0,&quot;virtualMileage&quot;:0,&quot;virtualPrice&quot;:20.00,&quot;virtualIntegralLimit&quot;:0,&quot;attributeKey1&quot;:&quot;颜色&quot;,&quot;attributeName1&quot;:&quot;无&quot;,&quot;attributeValue1&quot;:&quot;56&quot;,&quot;attributeKey2&quot;:&quot;型号&quot;,&quot;attributeName2&quot;:&quot;虚拟礼品&quot;,&quot;attributeValue2&quot;:&quot;44774&quot;,&quot;itemScore&quot;:0,&quot;itemStatScore&quot;:0.00,&quot;itemCreateScore&quot;:0,&quot;collectScore&quot;:0.00,&quot;saleScore&quot;:0.00,&quot;tblGoodsPaywayModelList&quot;:[{&quot;goodsPaywayId&quot;:&quot;03140714143403208122&quot;,&quot;goodsId&quot;:&quot;03140714143403208122&quot;,&quot;paywayCode&quot;:&quot;0002&quot;,&quot;incCode&quot;:0,&quot;stagesCode&quot;:0,&quot;perStage&quot;:0.00,&quot;stagesFlagCash&quot;:&quot;0&quot;,&quot;stagesFlagPoint&quot;:&quot;0&quot;,&quot;stagesFlagInc&quot;:&quot;0&quot;,&quot;goodsPoint&quot;:10000,&quot;isAction&quot;:&quot;1&quot;,&quot;isBirth&quot;:&quot;0&quot;,&quot;memberLevel&quot;:&quot;0000&quot;,&quot;goodsPrice&quot;:0.00,&quot;calMoney&quot;:1.00,&quot;ischeck&quot;:&quot;06&quot;,&quot;curStatus&quot;:&quot;0102&quot;,&quot;createOper&quot;:&quot;02020201&quot;,&quot;createTime&quot;:1405319643000,&quot;modifyOper&quot;:&quot;02010501&quot;,&quot;modifyTime&quot;:1414639172000}],&quot;id&quot;:&quot;03140714143403208122&quot;}" data-chose-item-dtolist="[{&quot;code&quot;:&quot;03140714143403208122&quot;,&quot;goodsCode&quot;:&quot;03140714143403208122&quot;,&quot;price&quot;:1.00,&quot;stock&quot;:0,&quot;stockWarning&quot;:5721,&quot;image1&quot;:&quot;http://shop.cgbchina.com.cn/img/eshop/eshop/goods/03140714143403208122/images/03140714143403208122_1.jpg&quot;,&quot;goodsTotal&quot;:6900371,&quot;stickFlag&quot;:0,&quot;stickOrder&quot;:999999999,&quot;delFlag&quot;:&quot;0&quot;,&quot;createOper&quot;:&quot;02020201&quot;,&quot;createTime&quot;:1405319643000,&quot;modifyOper&quot;:&quot;100016926223&quot;,&quot;modifyTime&quot;:1576200499000,&quot;xid&quot;:&quot;12783&quot;,&quot;preinstallStock&quot;:0,&quot;maxPoint&quot;:0,&quot;cardLevelId&quot;:&quot;00&quot;,&quot;prefuctureId&quot;:&quot;03&quot;,&quot;virtualLimit&quot;:0,&quot;virtualLimitDays&quot;:0,&quot;virtualMileage&quot;:0,&quot;virtualPrice&quot;:20.00,&quot;virtualIntegralLimit&quot;:0,&quot;attributeKey1&quot;:&quot;颜色&quot;,&quot;attributeName1&quot;:&quot;无&quot;,&quot;attributeValue1&quot;:&quot;56&quot;,&quot;attributeKey2&quot;:&quot;型号&quot;,&quot;attributeName2&quot;:&quot;虚拟礼品&quot;,&quot;attributeValue2&quot;:&quot;44774&quot;,&quot;itemScore&quot;:0,&quot;itemStatScore&quot;:0.00,&quot;itemCreateScore&quot;:0,&quot;collectScore&quot;:0.00,&quot;saleScore&quot;:0.00,&quot;tblGoodsPaywayModelList&quot;:[{&quot;goodsPaywayId&quot;:&quot;03140714143403208122&quot;,&quot;goodsId&quot;:&quot;03140714143403208122&quot;,&quot;paywayCode&quot;:&quot;0002&quot;,&quot;incCode&quot;:0,&quot;stagesCode&quot;:0,&quot;perStage&quot;:0.00,&quot;stagesFlagCash&quot;:&quot;0&quot;,&quot;stagesFlagPoint&quot;:&quot;0&quot;,&quot;stagesFlagInc&quot;:&quot;0&quot;,&quot;goodsPoint&quot;:10000,&quot;isAction&quot;:&quot;1&quot;,&quot;isBirth&quot;:&quot;0&quot;,&quot;memberLevel&quot;:&quot;0000&quot;,&quot;goodsPrice&quot;:0.00,&quot;calMoney&quot;:1.00,&quot;ischeck&quot;:&quot;06&quot;,&quot;curStatus&quot;:&quot;0102&quot;,&quot;createOper&quot;:&quot;02020201&quot;,&quot;createTime&quot;:1405319643000,&quot;modifyOper&quot;:&quot;02010501&quot;,&quot;modifyTime&quot;:1414639172000}],&quot;id&quot;:&quot;03140714143403208122&quot;}]" data-chose-item-fictitious="{&quot;attachedGoods&quot;:&quot;10044|10046|10048|10050&quot;,&quot;sevenDayGoods&quot;:&quot;11463&quot;,&quot;southernFlyGoods&quot;:&quot;10038|10039|10040|13133&quot;,&quot;allFlyGoods&quot;:&quot;10052|10053|10054|30149&quot;,&quot;yuTongKaGoods&quot;:&quot;12036|12037&quot;,&quot;lxsyxGoods&quot;:&quot;12012|12013&quot;}">
+                
+                    
+                        
+                            
+                                    <dl class="product-detail-content-meta clearfix default-hide"
+                                        
+                                        style="display:block"
+                                        
+                                        
+                                            
+                                                
+                                                
+                                            
+                                        
+                                    >
+                                        <dt >颜色：</dt>
+                                        <dd>
+                                            <ul class="gift-item-attributes clearfix 颜色" data-attrKey="颜色">
+                                                
+                                                    
+                                                        <li class="option 56"
+                                                            data-attribute="56">
+                                                                    <span class="meta-title"
+                                                                          data-attrkey="56">无</span>
+                                                            <i class="icon-detail-selected-bg img-i hide" style="display: none;"></i>
+                                                        </li>
+                                                    
+                                                
+                                            </ul>
+                                        </dd>
+                                    </dl>
+                            
+                        
+                            
+                                    <dl class="product-detail-content-meta clearfix default-hide"
+                                        
+                                        style="display:block"
+                                        
+                                        
+                                            
+                                                
+                                        style="display:block"
+                                                
+                                            
+                                        
+                                    >
+                                        <dt >型号：</dt>
+                                        <dd>
+                                            <ul class="gift-item-attributes clearfix 型号" data-attrKey="型号">
+                                                
+                                                    
+                                                        <li class="option 44774"
+                                                            data-attribute="44774">
+                                                                    <span class="meta-title"
+                                                                          data-attrkey="44774">虚拟礼品</span>
+                                                            <i class="icon-detail-selected-bg img-i hide" style="display: none;"></i>
+                                                        </li>
+                                                    
+                                                
+                                            </ul>
+                                        </dd>
+                                    </dl>
+                            
+                        
+                    
+                
+                <!--支付方式start-->
+                
+                    <dl class="product-detail-content-meta row-grid-bottom-0 clearfix product-paytype">
+                        <dt>支付方式：</dt>
+                        <dd>
+                            <ul class="clearfix js-payway">
+                                <li class="jfPay" data-payway="1">积分支付
+                                    <i class="icon-detail-selected-bg img-i hide"></i>
+                                </li>
+                                <li class="jfxjPay" data-payway="2">积分+现金
+                                    <i class="icon-detail-selected-bg img-i hide"></i>
+                                </li>
+                            </ul>
+                        </dd>
+                    </dl>
+                    <!--购买数量start-->
+                    <dl class="product-detail-content-meta clearfix input-amount"
+                        data-value="0">
+                        <dt>购买数量：</dt>
+                        <dd>
+                                <span class="product-detail-choose-amount buynumbox">
+                    <a href="javascript:void(0)" class="reduce minus getReduce">-</a>
+                    <input class="numbox-goodsDetail" type="text" id="numbox" value="1"
+                           onkeyup="this.value=this.value.replace(/\D/g,'')"
+                           onafterpaste="this.value=this.value.replace(/\D/g,'')">
+                    <a href="javascript:void(0)" class="increase no-left-border plus getPlus">+</a> </span>
+                            <span class="stockNum">
+                                <span>（已售</span>
+                                <span class="num">6900371</span>件）
+                            </span>
+                        </dd>
+                    </dl>
+                    <!--购买数量end-->
+                    <!--服务承诺start-->
+                    
+                    <!--服务承诺end-->
+                    <!--操作start-->
+                    <div class="product-detail-content-btn clearfix">
+                        <a href="javascript:void(0);" class="bg-red js-buy">立即购买</a>
+                        <a href="javascript:void(0);" class="bg-orange js-addCarts">加入购物车</a>
+                        <a href="https://ebanks.cgbchina.com.cn/channelsLink/creditCardApply.do?passageCode=002165"
+                           class="bg-coffee row-grid-right">申请广发卡</a>
+                    </div>
+                    <!--操作end-->
+                
+            </div>
+        </div>
+        <!--礼品型号付款展示区end-->
+    </div>
+</div>
+            <!--礼品推荐start-->
+            <div class="detail-rocommend js-component spirit-component" data-comp-path="item/detail-recommend" >
+    <div class="product-detail-recommend">
+        <div class="product-detail-recommend-title">商品推荐</div>
+        <ul>
+            
+            
+                
+            
+        </ul>
+    </div>
+</div>
+            <!--礼品推荐end-->
+        </div>
+        <!--礼品型号展示区end-->
+    </div>
+    <!--礼品型号展示区end-->
+    <!--礼品详情start-->
+    <div class="gd-container-up margin-top30">
+        <div class="product-detail-bottom-left">
+            <!--热销排行start-->
+            <div class="gd-commend-rank js-component spirit-component" data-comp-path="item/gd-commend-rank" >
+<div class="product-detail-ranking">
+    <div class="product-detail-ranking-title">热销排行</div>
+    <ul>
+        
+        
+            
+                <li>
+                    <div class="ranking-img"><a href="/mall/goods/03111124181013000378?itemCode=03111124181013000378"><img
+                            src="http://shop.cgbchina.com.cn/img/eshop/eshop/goods/03111124181013000378/images/03111124181013000378_1.jpg_100x100.jpg"></a></div>
+                    <div class="price"><span class="text-color-red text-font-weight-bold">500分
+                        </span>
+                    </div>
+                    <!--<i class="icon-all-price-icons row-grid-left-5 img-price"></i></div>-->
+                    <div class="ranking-title">
+                        <a href="/mall/goods/03111124181013000378?itemCode=03111124181013000378" class="text-hover-black"
+                           title=旧聪明卡免签账额1元>旧聪明卡免签账额1元</a>
+                    </div>
+                </li>
+            
+                <li>
+                    <div class="ranking-img"><a href="/mall/goods/03111124181013000379?itemCode=03111124181013000379"><img
+                            src="http://shop.cgbchina.com.cn/img/eshop/eshop/goods/03111124181013000379/images/03111124181013000379_1.jpg_100x100.jpg"></a></div>
+                    <div class="price"><span class="text-color-red text-font-weight-bold">10,000分
+                        </span>
+                    </div>
+                    <!--<i class="icon-all-price-icons row-grid-left-5 img-price"></i></div>-->
+                    <div class="ranking-title">
+                        <a href="/mall/goods/03111124181013000379?itemCode=03111124181013000379" class="text-hover-black"
+                           title=新聪明卡免还款签帐额20元>新聪明卡免还款签帐额20元</a>
+                    </div>
+                </li>
+            
+                <li>
+                    <div class="ranking-img"><a href="/mall/goods/03111124180602000367?itemCode=03111124180602000367"><img
+                            src="http://shop.cgbchina.com.cn/img/eshop/eshop/goods/03111124180602000367/images/03111124180602000367_1.jpg_100x100.jpg"></a></div>
+                    <div class="price"><span class="text-color-red text-font-weight-bold">12,500分
+                        </span>
+                    </div>
+                    <!--<i class="icon-all-price-icons row-grid-left-5 img-price"></i></div>-->
+                    <div class="ranking-title">
+                        <a href="/mall/goods/03111124180602000367?itemCode=03111124180602000367" class="text-hover-black"
+                           title=无限及钻石卡/臻享/臻尚兑换500航空里程>无限及钻石卡/臻享/臻尚兑换500航空里程</a>
+                    </div>
+                </li>
+            
+                <li>
+                    <div class="ranking-img"><a href="/mall/goods/03140714143403208122?itemCode=03140714143403208122"><img
+                            src="http://shop.cgbchina.com.cn/img/eshop/eshop/goods/03140714143403208122/images/03140714143403208122_1.jpg_100x100.jpg"></a></div>
+                    <div class="price"><span class="text-color-red text-font-weight-bold">10,000分
+                        </span>
+                    </div>
+                    <!--<i class="icon-all-price-icons row-grid-left-5 img-price"></i></div>-->
+                    <div class="ranking-title">
+                        <a href="/mall/goods/03140714143403208122?itemCode=03140714143403208122" class="text-hover-black"
+                           title=DIY卡免还款签账额20元>DIY卡免还款签账额20元</a>
+                    </div>
+                </li>
+            
+        
+    </ul>
+</div>
+</div>
+            <!--热销排行end-->
+            <!--热门收藏排行start-->
+            <div class="gd-commend-rank js-component spirit-component" data-comp-path="item/gd-commend-rank" >
+<div class="product-detail-ranking">
+    <div class="product-detail-ranking-title">热门收藏排行</div>
+    <ul>
+        
+        
+            
+                <li>
+                    <div class="ranking-img"><a href="/mall/goods/1903130096803?itemCode=19031300063998"><img
+                            src="http://shop.cgbchina.com.cn/img/M00/15/64/CsgDV1yAgj6AJiXYAABxopnPTbc417.jpg_100x100.jpg"></a></div>
+                    <div class="price"><span class="text-color-red text-font-weight-bold">208,000分
+                        </span>
+                    </div>
+                    <!--<i class="icon-all-price-icons row-grid-left-5 img-price"></i></div>-->
+                    <div class="ranking-title">
+                        <a href="/mall/goods/1903130096803?itemCode=19031300063998" class="text-hover-black"
+                           title=九阳空气炸锅KL20-J71 >九阳空气炸锅KL20-J71 </a>
+                    </div>
+                </li>
+            
+                <li>
+                    <div class="ranking-img"><a href="/mall/goods/1810110076745?itemCode=18101100026607"><img
+                            src="http://shop.cgbchina.com.cn/img/M00/11/7A/CsgDV1u-sZ2AOLaKAAD94WjPStU463.jpg_100x100.jpg"></a></div>
+                    <div class="price"><span class="text-color-red text-font-weight-bold">178,000分
+                        </span>
+                    </div>
+                    <!--<i class="icon-all-price-icons row-grid-left-5 img-price"></i></div>-->
+                    <div class="ranking-title">
+                        <a href="/mall/goods/1810110076745?itemCode=18101100026607" class="text-hover-black"
+                           title=梦洁家纺 勿忘心安系列-纯棉印花四件套>梦洁家纺 勿忘心安系列-纯棉印花四件套</a>
+                    </div>
+                </li>
+            
+                <li>
+                    <div class="ranking-img"><a href="/mall/goods/1810090076381?itemCode=18100900026037"><img
+                            src="http://shop.cgbchina.com.cn/img/M00/1F/BD/CsgDWF2ANnuANA_kAAEaYcgSe7w829.jpg_100x100.jpg"></a></div>
+                    <div class="price"><span class="text-color-red text-font-weight-bold">148,000分
+                        </span>
+                    </div>
+                    <!--<i class="icon-all-price-icons row-grid-left-5 img-price"></i></div>-->
+                    <div class="ranking-title">
+                        <a href="/mall/goods/1810090076381?itemCode=18100900026037" class="text-hover-black"
+                           title=水星家纺DH悠然负离子羽丝绒被1117758>水星家纺DH悠然负离子羽丝绒被1117758</a>
+                    </div>
+                </li>
+            
+                <li>
+                    <div class="ranking-img"><a href="/mall/goods/1810090076387?itemCode=18100900026047"><img
+                            src="http://shop.cgbchina.com.cn/img/M00/06/94/CsgCl1u-vjSAAvJQAADE0NkZ61U114.jpg_100x100.jpg"></a></div>
+                    <div class="price"><span class="text-color-red text-font-weight-bold">191,000分
+                        </span>
+                    </div>
+                    <!--<i class="icon-all-price-icons row-grid-left-5 img-price"></i></div>-->
+                    <div class="ranking-title">
+                        <a href="/mall/goods/1810090076387?itemCode=18100900026047" class="text-hover-black"
+                           title=水星家纺蓝莓时光四件套115335>水星家纺蓝莓时光四件套115335</a>
+                    </div>
+                </li>
+            
+        
+    </ul>
+</div>
+</div>
+            <!--热门收藏排行end-->
+        </div>
+        <div class="product-detail-bottom-right">
+            <!--tab详情start-->
+            <div class="gd-detail-tab js-component spirit-component" data-comp-path="item/gd_detail_tab" >
+<ul class="tab-navs clearfix product-detail-bottom-tab" data-goodsmodel="{&quot;code&quot;:&quot;03140714143403208122&quot;,&quot;ordertypeId&quot;:&quot;JF&quot;,&quot;name&quot;:&quot;DIY卡免还款签账额20元&quot;,&quot;productId&quot;:40488,&quot;createType&quot;:&quot;0&quot;,&quot;vendorId&quot;:&quot;JF0000&quot;,&quot;goodsBrandId&quot;:2,&quot;backCategory1Id&quot;:1,&quot;backCategory2Id&quot;:9,&quot;backCategory3Id&quot;:50,&quot;channelCc&quot;:&quot;01&quot;,&quot;channelPhone&quot;:&quot;01&quot;,&quot;channelSms&quot;:&quot;01&quot;,&quot;channelPoints&quot;:&quot;02&quot;,&quot;channelIvr&quot;:&quot;02&quot;,&quot;goodsType&quot;:&quot;01&quot;,&quot;isInner&quot;:&quot;1&quot;,&quot;promotionTitle&quot;:&quot;DIY卡免还款签账额20元&quot;,&quot;giftDesc&quot;:&quot;  &quot;,&quot;introduction&quot;:&quot;仅限广发DIY信用卡兑换，兑换金额需小于您当日欠款金额，每次兑换需以10000分的整数倍进行兑换，成功换领后签账额两个工作日内入账。&quot;,&quot;regionType&quot;:&quot;04&quot;,&quot;approveStatus&quot;:&quot;06&quot;,&quot;limitCount&quot;:999999,&quot;pointsType&quot;:&quot;1&quot;,&quot;cards&quot;:&quot;0159,0159,0159,0159&quot;,&quot;cardLevelId&quot;:&quot;00&quot;,&quot;onShelfCcDate&quot;:1559023789000,&quot;offShelfCcDate&quot;:1559186374000,&quot;onShelfAppDate&quot;:1410710400000,&quot;offShelfAppDate&quot;:1458921600000,&quot;currType&quot;:&quot;156&quot;,&quot;delFlag&quot;:&quot;0&quot;,&quot;createOper&quot;:&quot;02020201&quot;,&quot;createTime&quot;:1405319643000,&quot;modifyOper&quot;:&quot;02020109&quot;,&quot;modifyTime&quot;:1559186373000,&quot;onShelfTime&quot;:1410710400000,&quot;autoOffShelfTime&quot;:253402099200000,&quot;goodsBrandName&quot;:&quot;广发专营&quot;,&quot;onShelfPointsDate&quot;:1555919870000,&quot;offShelfPointsDate&quot;:253402099200000,&quot;onShelfIvrDate&quot;:1559027749000,&quot;offShelfIvrDate&quot;:253402099200000,&quot;invoiceType&quot;:&quot;01&quot;,&quot;channelEmf&quot;:&quot;01&quot;}" data-spuattributes="[]" data-detail="[{&quot;code&quot;:&quot;03140714143403208122&quot;,&quot;goodsCode&quot;:&quot;03140714143403208122&quot;,&quot;price&quot;:1.00,&quot;stock&quot;:0,&quot;stockWarning&quot;:5721,&quot;image1&quot;:&quot;http://shop.cgbchina.com.cn/img/eshop/eshop/goods/03140714143403208122/images/03140714143403208122_1.jpg&quot;,&quot;goodsTotal&quot;:6900371,&quot;stickFlag&quot;:0,&quot;stickOrder&quot;:999999999,&quot;delFlag&quot;:&quot;0&quot;,&quot;createOper&quot;:&quot;02020201&quot;,&quot;createTime&quot;:1405319643000,&quot;modifyOper&quot;:&quot;100016926223&quot;,&quot;modifyTime&quot;:1576200499000,&quot;xid&quot;:&quot;12783&quot;,&quot;preinstallStock&quot;:0,&quot;maxPoint&quot;:0,&quot;cardLevelId&quot;:&quot;00&quot;,&quot;prefuctureId&quot;:&quot;03&quot;,&quot;virtualLimit&quot;:0,&quot;virtualLimitDays&quot;:0,&quot;virtualMileage&quot;:0,&quot;virtualPrice&quot;:20.00,&quot;virtualIntegralLimit&quot;:0,&quot;attributeKey1&quot;:&quot;颜色&quot;,&quot;attributeName1&quot;:&quot;无&quot;,&quot;attributeValue1&quot;:&quot;56&quot;,&quot;attributeKey2&quot;:&quot;型号&quot;,&quot;attributeName2&quot;:&quot;虚拟礼品&quot;,&quot;attributeValue2&quot;:&quot;44774&quot;,&quot;itemScore&quot;:0,&quot;itemStatScore&quot;:0.00,&quot;itemCreateScore&quot;:0,&quot;collectScore&quot;:0.00,&quot;saleScore&quot;:0.00,&quot;tblGoodsPaywayModelList&quot;:[{&quot;goodsPaywayId&quot;:&quot;03140714143403208122&quot;,&quot;goodsId&quot;:&quot;03140714143403208122&quot;,&quot;paywayCode&quot;:&quot;0002&quot;,&quot;incCode&quot;:0,&quot;stagesCode&quot;:0,&quot;perStage&quot;:0.00,&quot;stagesFlagCash&quot;:&quot;0&quot;,&quot;stagesFlagPoint&quot;:&quot;0&quot;,&quot;stagesFlagInc&quot;:&quot;0&quot;,&quot;goodsPoint&quot;:10000,&quot;isAction&quot;:&quot;1&quot;,&quot;isBirth&quot;:&quot;0&quot;,&quot;memberLevel&quot;:&quot;0000&quot;,&quot;goodsPrice&quot;:0.00,&quot;calMoney&quot;:1.00,&quot;ischeck&quot;:&quot;06&quot;,&quot;curStatus&quot;:&quot;0102&quot;,&quot;createOper&quot;:&quot;02020201&quot;,&quot;createTime&quot;:1405319643000,&quot;modifyOper&quot;:&quot;02010501&quot;,&quot;modifyTime&quot;:1414639172000}],&quot;id&quot;:&quot;03140714143403208122&quot;}]">
+    <li class="active on js-tab" data-role="nav"><a href="javascript:void(0);">商品详情</a></li>
+    <li class="js-tab" data-role="nav"><a href="javascript:void(0);">商品规格</a></li>
+    
+</ul>
+<div class="tab-contents clearfix">
+    <div data-role="content" class="tab-content">
+            <div class="product-detail-bottom-tab-box">
+                
+            </div>
+            <div class="clear"></div>
+
+        <div class="introduction js-introduction itemIntroduction" style="text-align: center"></div>
+        <div class="clear"></div>
+        <div class="introduction js-introduction" style="text-align: center">仅限广发DIY信用卡兑换，兑换金额需小于您当日欠款金额，每次兑换需以10000分的整数倍进行兑换，成功换领后签账额两个工作日内入账。</div>
+    </div>
+    <div data-role="content" class="tab-content hide">
+        <div class="goodsStand"></div>
+    </div>
+
+    <div data-role="content" class="tab-content hide">
+        <div class="div-consult">
+            <div class="consulting-question">
+                <input class="input-text js-consult-context" required type="text" pattern="^([\u4e00-\u9fa5]+|[\u4e00-\u9fa5a-zA-Z_0-9]+|[,.，。；“”;])$" maxlength="150">
+                <a class="btn btn-default set-sell-consult">我要咨询</a>
+            </div>
+        </div>
+        <h3 class="gc-title">商品咨询</h3>
+        <div class="sellConsult">
+            <div>
+                <div class="consulting-list">
+                    
+                </div>
+            </div>
+        </div>
+        <div class="pagination pagination-add share-pagination" data-total=com.spirit.common.model.Pager@5af3891e></div>
+    </div>
+</div>
+</div>
+            <!--tab详情end-->
+        </div>
+    </div>
+    <!--礼品详情end-->
+</div>
+</div>
+    </div>
+    <div style="clear:both"></div>
+    <div class="footers js-componentonent spirit-component" data-comp-path="common/footer" >
+    <div class="footer">
+        <!--<div class="footer-ensure">
+            <i class="icon-footer-ensure" >
+            </i>
+        </div>-->
+        <div class="footer-box-bgcolor-gray">
+            <div class="footer-box clearfix">
+                <ul>
+                    <li class="title">新手上路</li>
+                    
+                        <li><a target="_blank" href="http://card.cgbchina.com.cn/Info/18090877">如何登录</a></li>
+                    
+                        <li><a target="_blank" href="http://card.cgbchina.com.cn/Info/18091751">如何注册</a></li>
+                    
+                        <li><a target="_blank" href="http://card.cgbchina.com.cn/Info/18092096">如何购买</a></li>
+                    
+                        <li><a target="_blank" href="http://card.cgbchina.com.cn/Info/18092151">信息修改</a></li>
+                    
+                        <li><a target="_blank" href="http://card.cgbchina.com.cn/Info/18092184">商品查询</a></li>
+                    
+                        <li><a target="_blank" href="http://card.cgbchina.com.cn/Info/18092316">安全提示</a></li>
+                    
+                </ul>
+                <ul>
+                    <li class="title">商品订购</li>
+                    
+                        <li><a target="_blank" href="http://card.cgbchina.com.cn/Info/18092473">免责声明</a></li>
+                    
+                        <li><a target="_blank" href="http://card.cgbchina.com.cn/Info/18092719">网上订购</a></li>
+                    
+                        <li><a target="_blank" href="http://card.cgbchina.com.cn/Info/18092772">电话订购</a></li>
+                    
+                        <li><a target="_blank" href="http://card.cgbchina.com.cn/Info/18092807">支付常见问题</a></li>
+                    
+                        <li><a target="_blank" href="http://card.cgbchina.com.cn/Info/18092975">配送说明</a></li>
+                    
+                        <li><a target="_blank" href="http://card.cgbchina.com.cn/Info/18093053">支付方式</a></li>
+                    
+
+                </ul>
+                <ul>
+                    <li class="title">售后服务</li>
+                    
+                        <li><a target="_blank" href="http://card.cgbchina.com.cn/Info/18092407">送货签收</a></li>
+                    
+                        <li><a target="_blank" href="http://card.cgbchina.com.cn/Info/18093134">订单常见问题</a></li>
+                    
+                        <li><a target="_blank" href="http://card.cgbchina.com.cn/Info/18093209">售后常见问题</a></li>
+                    
+                        <li><a target="_blank" href="http://card.cgbchina.com.cn/Info/18093242">退换货流程</a></li>
+                    
+                        <li><a target="_blank" href="http://card.cgbchina.com.cn/Info/18093295">常见问题纠纷</a></li>
+                    
+                        <li><a target="_blank" href="http://card.cgbchina.com.cn/Info/18493277">平台商家联系方式</a></li>
+                    
+                </ul>
+                <ul>
+                    <li class="title">常见问题</li>
+                    
+                        <li><a target="_blank" href="http://card.cgbchina.com.cn/Info/18092369">购物常见问题</a></li>
+                    
+                        <li><a target="_blank" href="http://card.cgbchina.com.cn/Info/18092506">关于拒收商品</a></li>
+                    
+                        <li><a target="_blank" href="http://card.cgbchina.com.cn/Info/18092595">关于发票</a></li>
+                    
+                        <li><a target="_blank" href="https://shop.cgbchina.com.cn/eshop/activity/10000106/quan.html">优惠券使用攻略</a></li>
+                    
+                        <li><a target="_blank" href="http://card.cgbchina.com.cn/Info/18092648">支付攻略及常见问题指引</a></li>
+                    
+                </ul>
+                <div class="footer-qr">
+                    <div class="row-grid-bottom-20">下载发现精彩APP海量优惠</div>
+                   <img class="qr-code-image" src="http://shop.cgbchina.com.cn/img/M00/00/01/CsgCmFgySUOABqGtAABMAvJnmFk603.jpg" /><br /></div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="footer-copyright-text clearfix">
+                <div class="footer-link">
+                    <a class="text-hover-black-t text-font-size-14" href="http://www.cgbchina.com.cn/CN/cgbinfo/index.html" target="_blank">关于我们</a> |
+                    <a class="text-hover-black-t text-font-size-14" href="http://www.cgbchina.com.cn/Info/11618954" target="_blank">用卡小知识</a> |
+                    <a class="text-hover-black-t text-font-size-14" href="http://www.cgbchina.com.cn/Channel/11592364" target="_blank">还款方式</a> |
+                    <a class="text-hover-black-t text-font-size-14" href="http://www.cgbchina.com.cn/" target="_blank">广发银行首页</a> |
+                    <a class="text-hover-black-t text-font-size-14" href="http://card.cgbchina.com.cn/" target="_blank">广发银行信用卡首页</a> |
+                    <a class="text-hover-black-t text-font-size-14" href="https://ebanks.cgbchina.com.cn/channelsLink/creditCardApply.do?passageCode=002165" target="_blank">申请广发信用卡</a>
+                </div>
+                <div class="footer-link">
+                    <p class="text-font-size-14">广发银行 版权所有粤ICP备05058995号</p>
+                    <a target="_blank" href="https://credit.cecdc.com/CX20120110001376001826.html"><i class="icon-log_cx"></i></a>
+                    <a target="_blank" href="http://netadreg.gzaic.gov.cn/ntmm/WebSear/WebLogoPub.aspx?logo=440100100011999121600067"><i class="icon-log_hd"></i></a>
+                </div>
+                
+       
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="right-float-nav js-component spirit-component" data-comp-path="common/right_float" >
+    <div class="right-float">
+        <div class="right-float-user right-float-common">
+            <a href="/mall/user/personal-center">
+                <i class="right-float-user icon-right-float-user"></i>
+                <i class="right-float-user-h icon-right-float-user-h"></i>
+            </a>
+            <span><a href="/mall/user/personal-center"><i class="page-top-bg icon-side-right-bg"></i><em>个人中心</em></a></span>
+        </div>
+        <div class="right-float-cart right-float-common">
+            <a href="/mall/buyer/cart">
+                <i class="right-float-cart icon-right-float-cart"></i>
+                <i class="right-float-cart-h icon-right-float-cart-h"></i>
+            </a>
+            <span><a href="/mall/buyer/cart"><i class="page-top-bg icon-side-right-bg"></i><em>购物车</em></a></span>
+        </div>
+        <div class="right-float-code right-float-common">
+            <a href="/mall/user/my-coupon">
+                <i class="right-float-code icon-right-float-code"></i>
+                <i class="right-float-code-h icon-right-float-code-h"></i>
+            </a>
+            <span><a href="/mall/user/my-coupon"><i class="page-top-bg icon-side-right-bg"></i><em>优惠券</em></a></span>
+        </div>
+        <div class="right-float-keep right-float-common">
+            <a href="/mall/user/myFavorite">
+                <i class="right-float-keep icon-right-float-keep"></i>
+                <i class="right-float-keep-h icon-right-float-keep-h"></i>
+            </a>
+            <span><a href="/mall/user/myFavorite"><i class="page-top-bg icon-side-right-bg"></i><em>我的收藏</em></a></span>
+        </div>
+        <div class="right-float-foot right-float-common">
+            <a href="/mall/user/history">
+                <i class="right-float-foot icon-right-float-foot"></i>
+                <i class="right-float-foot-h icon-right-float-foot-h"></i>
+            </a>
+            <span><a href="/mall/user/history"><i class="page-top-bg icon-side-right-bg"></i><em>我的足迹</em></a></span>
+        </div>
+        <div class="right-float-integral right-float-common">
+            <a href="/mall/user/personal-center">
+                <i class="right-float-integral icon-right-float-integral"></i>
+                <i class="right-float-integral-h icon-right-float-integral-h"></i>
+            </a>
+            <span><a href="/mall/user/personal-center"><i class="page-top-bg icon-side-right-bg"></i><em>积分查询</em></a></span>
+        </div>
+
+        <div style="display: none;" class="right-float-service right-float-common">
+            <a class="online">
+                <i class="right-float-service icon-right-float-service"></i>
+                <i class="right-float-service-h icon-right-float-service-h"></i>
+            </a>
+            <span><a class="online" ><i class="page-top-bg icon-side-right-bg"></i><em>在线客服</em></a></span>
+        </div>
+
+        <div class="page-top">
+            <i class="page-top icon-page-top"></i>
+            <i class="page-top-h icon-page-top-h"></i>
+            <span><a href="javascript:void(0)"><i class="page-top-bg icon-side-right-bg"></i><em>返回顶部</em></a></span>
+        </div>
+    </div>
+</div>
+
+<script src="/assets/scripts/spirit-1107ce67c7.js"></script>
+<script src="/assets/scripts/app-c9d27948de.js"></script>
+<script src="/assets/scripts/qrcode-fbcbe309be.js"></script>
+<script type="text/javascript">
+    seajs.use("app", function (app) {
+        app.init();
+
+    });</script>
+
+</body>
+
+</html>
+
+Process finished with exit code 0

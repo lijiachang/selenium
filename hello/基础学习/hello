@@ -1,0 +1,312 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+'''
+zhushi
+'''
+
+# #######################string#########################
+str = u'你好hello python'  # 前面加上u转成Unicode码，汉字就是1位计数，否则站3位
+print str
+print str[6:12]  # 字符串截取
+print str[:-1]  # 字符串截取 删除最后一个字符
+
+# 字符串替换
+str1 = str.replace('python', 'PY')
+print str1
+# 字符串替换 ☞☞☞  翻译
+a = "123321"
+import string
+
+c = string.maketrans("123", "abc")  # 翻译表 1-a  2-b 3-c
+print "翻译：", a.translate(c)
+print "翻译：", a.translate(c, "1")  # 删除1
+
+# 字符串查找
+print str.find('py')  # 返回位置，-1表示未找到
+# str.index("py")  也可以使用index ，找不到会抛出异常
+
+# 字符串判断是否包含字符
+print(" 字符串判断是否包含字符")
+print "13" in a
+
+# 检查字符串是否只包含数字。
+'123'.isnumeric()
+# => True
+
+# 检查字符串是否只包含字母。
+'123a'.isalpha()
+# => False
+
+# 检查字符串是否只包含数字和字母。
+'123abc'.isalnum()
+# => True
+
+# 字符串开头判断
+str123 = "this is string example....wow!!!"
+print str123.startswith('this')
+print str123.startswith('is', 2, 4)  # 2-4 是检测起始和结束位置
+print str123.startswith('this', 2, 4)
+# 字符串查找某个字符的出现个数
+print len("abababcccab".split("ab")) - 1
+
+# 字符串的拼接
+a = "1234abc"
+b = '234dce'
+print "".join([a, b])
+print '.'.join([a, b])
+
+# 字符串的替换
+str2 = "this is string example....wow!!! this is really string"
+print str2.replace("is", "was")
+print str2.replace("is", "was", 3)  # 替换不超过 3 次
+
+# 使用正则，字符串切割
+import re
+
+e = "a1b2c3d4"
+print re.split(r"\d", e)  # 用数字分割字符串，r的意思是不使用转义
+
+# 占位符  格式化输出format
+ap = "this is {} {}".format("my", "apple")
+ap1 = "this is {1} {0}".format("my", "apple")
+print ap
+print ap1
+ap2 = "this is {whose} {fruit}".format(whose="my", fruit="banana")
+print ap2
+
+# enumerate() 枚举函数用于将一个可遍历的数据对象(如列表、元组或字符串)组合为一个索引序列，同时列出数据和数据下标
+aaa = ["a", "b", "c", "d"]
+for x, y in enumerate(aaa):
+    print x, y
+# ##########################List####################################
+list = ['one', 'two', 'three', 123]
+print len(list)  # 求长度
+print list
+print list[1]
+print list[-1]  # 最后一个元素
+print list[1:2]
+print "**********list元素添加操作**************"
+list.append('four')  # list是一个可变的有序表，所以，可以往list中追加元素到末尾
+print list
+list.insert(0, 'zero')  # 元素插入到指定的位置，后面的元素会后移  （insert不是替换指定位置）
+print list
+# List删除操作
+print "**********list删除操作**************"
+del list[0]  # 1. del 按照索引删除
+print list
+list.pop()  # 2. pop 删除list末尾的元素,并且返回。要删除指定位置的元素，用pop(i)方法，其中i是索引位置
+print list
+list.remove("two")  # 3. 删除列表中第一个匹配的值，只删除一个
+print list
+del list[:]  # 4. 清空列表内元素.变成空列表
+print list
+
+# list列表切片
+print "**********切片************"
+num = range(1, 10)  # 生成1-9数字
+print num
+# 正向索引
+print num[0:5:1]  # 切片0到5  步进为1
+print num[0:8:2]  # 切片0到8  步进为2
+# 反向索引
+print num[-1:-5:-1]
+
+# list列表拼接
+print "*********list列表拼接************"
+num1 = [1, 2, 3]
+num2 = [4, 5, 6]
+print num1 + num2  # 传统相加，地址会改变
+num1.extend(num2)  # 把参数里面的元素，添加到原有列表中，原有地址不改变
+print num1  # num1 已经改变
+
+# List元素判断
+print "************List元素判断***********"
+num1 = [1, 2, 3]
+print 1 in num1  # 返回布尔类型
+print 8 in num1
+print 8 not in num1
+
+print "************List元素位置查找***********"
+# index() 函数用于找出某个值第一个匹配项的索引位置，没有找到则抛出异常。
+num1 = [1, 2, 3, "as", "ab"]
+print num1.index("as")
+# print num1.index("as", 0, 3)  # 指定切片内，第一次出现的位置
+
+print "***********List元素排序****************"
+list1 = [11, 44, 55, 22, 33]
+list1.sort()  # 将列表元素排序
+print list1
+list1.reverse()  # 将列表元素倒序
+print list1
+
+print "**************List方法应用****************"
+# abc="abc"
+# list(abc)  #前面不小心定义了list，现在没发使用自带的list方法了—
+# print list((1,2))
+
+
+# ####################tuple########################
+# tuple和list非常类似，但是tuple一旦初始化就不能修改，排序。保证数据安全
+print "**************元组tuple****************"
+t = (1, 2, 3)
+a, b, c = t  # type: (int, int, int) # 此时a=1 b=2 c=3
+print c
+print t[1:3]  # 元组可以切片
+# 元组可以和列表相互转化，已达到修改的目的
+# aa=list(t)
+# t=tuple(aa)
+print "********多个列表组合成一个元组列表*********"
+a1 = ['a', 'b', 'c']
+b1 = [1, 2, 3]
+print [(k, v) for k, v in zip(a1, b1)]
+# => [('a', 1), ('b', 2), ('c', 3)]
+
+####################### dictionary#############################
+# 使用键-值（key-value）存储，具有极快的查找速度,一个key只能对应一个value,
+# 字典是无序的，不能使用偏移量存取，只能使用key
+# key的定义值必须是不可变的类型 tuple包括里面的元素,数字 ，字符串等
+print '*********dictionary**********'
+dict1 = {}
+dict1['one'] = "this is one"
+dict1['two'] = 'this is two'
+dict2 = {'name': 'li', 'age': 22, 'work': 'master'}
+dict2["name"] = "lichang"  # 修改
+
+print "********字典的查找************"
+print dict2.get('Tho')  # get方法，key不存在可以返回none
+print dict1['one']  # 不存在会报异常
+print dict2
+print dict2.keys()  # 返回所有的key
+print dict2.values()  # 返回所有的value
+print dict2.items()  # 返回所有的key和value,组成一个tupl
+# 根据key查找value
+print dict1.get("one")
+print dict1.get("five", "没找到")  # 默认没有找到返回none，可以改变默认值
+print "********字典的添加操作************"
+dict2.update({"love": "money"})
+print dict2
+
+print "********字符串转字典************"
+str_dict = """{"mastercpus_percent":"1"}"""
+print eval(str_dict)
+print type(eval(str_dict))
+print "********字典的删除操作************"
+# 删除某个元素两种方法
+del dict2["name"]
+print dict2
+dict2.pop('age')  # 删除一个key，并且返回删除的key对应的value
+print dict2
+# 清空字典内元素
+dict2.clear()
+print dict2
+# 删除字典
+del dict2  # dict2就不存在了
+print "********字典的元素判断************"
+# 判断是否有指定key值
+print "one" in dict1
+print dict1.has_key("one")
+print "*****字典转成元组tuple 生成一个字典的容器******"
+print dict1.items()
+print "*****两个序列构建一个字典******"
+t1 = (1, 2, 3)
+t2 = (10, 20, 30)
+print(dict(zip(t1, t2)))
+
+print "***************字典排序*******************"
+# 方法1
+dict5 = {"a": "123", "c": "234", "b": "456"}
+key_list = sorted(dict5.keys())
+for x in key_list:
+    print x, dict5[x]
+# 方法2
+d = {'c': 3, 'd': 4, 'b': 2, 'a': 1}
+print sorted(d.items())
+# => [('a', 1), ('b', 2), ('c', 3), ('d', 4)]
+
+# 和list比较，dict有以下几个特点：
+#
+# 查找和插入的速度极快，不会随着key的增加而增加；
+# 需要占用大量的内存，内存浪费多。
+# 而list相反：
+#
+# 查找和插入的时间随着元素的增加而增加；
+# 占用空间小，浪费内存很少。
+# 所以，dict是用空间来换取时间的一种方法。
+
+#################### set集合#######################
+# 集合没有顺序的概念，不能切片和索引操作,集合可以用in和not in判断元素存在
+# set和dict类似，也是一组key的集合，但不存储value,重复元素在set中自动被过滤
+# set和list区别就是 set不能重复。list想要去重，可以先转成set，再转回去实现
+print '**********set集合**********'
+s1 = set([1, 2, 3])  # 可变的集合set()  ,  不可变的集合frozenset()
+s2 = set([2, 3, 4])
+# 集合的添加操作
+print '集合的添加操作'
+s1.add("banana")
+print s1
+s1.update("apple")  # update的添加操作，是把添加的对象拆分，添加进去
+print s1
+# 集合的删除操作
+print '集合的删除操作'
+s1.remove("banana")
+print s1
+# 并集和交集和差集
+print "并集和交集和差集"
+print s1 & s2
+print s1 | s2
+print s1 - s2
+
+print dir(frozenset)  # 查看不可变集合frozenset属性，没有添加和修改
+
+# 条件判断和循环
+# 从raw_input()读取的内容永远以字符串的形式返回，需要先转成整型再判断
+in_age = raw_input('please intput your age:')
+in_age = int(in_age)
+if in_age >= 18:
+    print 'your age is ', in_age
+    print 'adult'
+# elif in_age >= 6;
+else:
+    print 'your age is ', in_age
+    print 'teenager'
+
+# for in循环
+numbers = [1124, 5656, 9090]
+for number in numbers:
+    print number
+
+    # 整数1到10求和
+sum = 0
+for x in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]:
+    sum = sum + x
+print sum
+
+# 整数1到100求和，range()函数，可以生成一个整数序列,里面填入生成的个数，
+print range(101)  # 先看看效果
+sum = 0
+for x in range(101):
+    sum = sum + x
+print sum
+
+# while 循环
+sum = 0
+n = 99
+while n > 0:
+    sum = sum + 1
+    n = n - 2
+print sum + 1000000000000
+
+in_name = raw_input('please input your name:')
+print 'hello:', in_name
+
+print 3 > 2
+
+age = 17
+if age >= 18:
+    print 'da'
+else:
+    print 'xiao'
+
+print "************if else三元表达式************"
+print 3 if True else 4

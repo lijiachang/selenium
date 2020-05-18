@@ -1,0 +1,111 @@
+老虎机
+
+Request URL:https://payhome.jd.com/my/api/lottery/lottery?callback=jQuery321025215989357865487_1540259947308&biz=doubleEleven&fp=940cfd4619863c8a1b0bd38b185490ca&eid=3J5J2UL3W7BNXSXSJEIIBDVLHSUC4STJMPIZSQFC3IPKFC45TSYMLSJM3L5TRBIDW4VGFWDBN5M62UQDNBX6KZFBTA&_=1540259947314
+Request Method:GET
+Status Code:200 OK
+Remote Address:106.39.169.59:443
+Referrer Policy:no-referrer-when-downgrade
+Response Headers
+view source
+Cache-Control:max-age=0
+Connection:close
+Content-Type:text/javascript;charset=UTF-8
+Date:Tue, 23 Oct 2018 02:34:02 GMT
+Expires:Tue, 23 Oct 2018 02:34:02 GMT
+Server:JDWS/1.0.0
+Transfer-Encoding:chunked
+Request Headers
+view source
+Accept:*/*
+Accept-Encoding:gzip, deflate, br
+Accept-Language:zh-CN,zh;q=0.9
+Connection:keep-alive
+Cookie:__jdu=15365567196731478202789; shshshfpa=af42ffe5-af5a-0497-6c34-bef1a37d2787-1536556720; shshshfpb=07be052eb24541a13576863be664840b2b03be9737749b7485b95feb43; pinId=g-aU7U9xYcr1BtJPsvi3YbV9-x-f3wj7; TrackID=1Q0RwNyebSXhSXzMHPAB7pJPu0pwN-DFkvvR4YVuFiPJ2MDE_0w01fMr37dk1J_E1nN0WkyTpp_0hfDD2pV1nS8NT60EgPhCVLNiuFo8mVJU; PCSYCityID=1; ipLoc-djd=1-72-2799-0; _gcl_au=1.1.1440135969.1539770576; 3AB9D23F7A4B3C9B=3J5J2UL3W7BNXSXSJEIIBDVLHSUC4STJMPIZSQFC3IPKFC45TSYMLSJM3L5TRBIDW4VGFWDBN5M62UQDNBX6KZFBTA; mba_muid=15365567196731478202789; retina=0; cid=3; webp=1; visitkey=70565571183859242; sc_width=1920; TrackerID=TS3BudaDk4HkbtEAIiq4Vg6kb6vqhpLTx8h_om8yjmpwuyDBLGvF1m9MK5EhbnW51FljwQA8NFvQD5TvkJnbwhurADFr_uqsH3qG-kVRGCQ; pt_key=AAFbyVY4ADBerPNMPKSNfeMWjdkSd6_5Ggz6N2IoK3R-aCR45uQOzwpI7i91X84y6KHn64Z9r8Y; pt_pin=jd_76ab57cdbf964; pt_token=difhz9kq; pwdt_id=jd_76ab57cdbf964; shshshfp=cb615772962025bfdb274701d80603e6; __wga=1539921480632.1539921448643.1539921448643.1539921448643.3.1; unpl=V2_ZzNtbRICF0UhCBEDc0lfDGIAFV0SVhRHdF1HVCsdDwU1AhsNclRCFXwURlVnGl8UZwMZXUNcRxxFCEJkeBhcBGQKElpKUnMlfQAoVzYZMgYJAF9tQVdzFXQ4RlB5HlgBYAUSVUVRQRVwDk9XehpaDG8zIl1EZ3NAJVdOVnoRXAZXAiJcclZzXhsJC1R%2fG1sBYwQUXUpQRRd1DUBdeBhfA24LIlxyVA%3d%3d; __jda=226489691.15365567196731478202789.1536556720.1540178472.1540259888.45; __jdc=226489691; _jrda=3; __jdv=226489691|iosapp|t_335139774|appshare|Wxfriends|1540260008232
+Host:payhome.jd.com
+Referer:https://pb.jd.com/activity/2018/18zhifu11/html/index.html
+User-Agent:Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36
+Query String Parameters
+view source
+view URL encoded
+callback:jQuery321025215989357865487_1540259947308
+biz:doubleEleven
+fp:940cfd4619863c8a1b0bd38b185490ca
+eid:3J5J2UL3W7BNXSXSJEIIBDVLHSUC4STJMPIZSQFC3IPKFC45TSYMLSJM3L5TRBIDW4VGFWDBN5M62UQDNBX6KZFBTA
+_:1540259947314
+
+jQuery321025215989357865487_1540259947308({"code":"F_000000","data":{"pickedUrl":"","recordId":3998540,"rewardAmount":0,"rewardId":558,"rewardName":"信用卡还款1元优惠券","rewardStatus":2,"unPickUrl":""},"msg":"接口调用成功","success":true})
+jQuery321025215989357865487_1540259947308({"code":"A_000003","data":"-1","msg":"抽奖机会用尽","success":false})
+
+付款码 10-1
+Request URL:https://pa.jd.com/prize/center/h5/draw?callback=jQuery32106100370842427734_1540262407237&entranceKey=98afa61a3824fcefb8020d935d6e7635&_=1540262407239
+Request Method:GET
+Status Code:200 OK
+Remote Address:106.39.169.59:443
+Referrer Policy:no-referrer-when-downgrade
+Response Headers
+view source
+Accept-Charset:big5, big5-hkscs, euc-jp, euc-kr, gb18030, gb2312, gbk, ibm-thai, ibm00858, ibm01140, ibm01141, ibm01142, ibm01143, ibm01144, ibm01145, ibm01146, ibm01147, ibm01148, ibm01149, ibm037, ibm1026, ibm1047, ibm273, ibm277, ibm278, ibm280, ibm284, ibm285, ibm290, ibm297, ibm420, ibm424, ibm437, ibm500, ibm775, ibm850, ibm852, ibm855, ibm857, ibm860, ibm861, ibm862, ibm863, ibm864, ibm865, ibm866, ibm868, ibm869, ibm870, ibm871, ibm918, iso-2022-cn, iso-2022-jp, iso-2022-jp-2, iso-2022-kr, iso-8859-1, iso-8859-13, iso-8859-15, iso-8859-2, iso-8859-3, iso-8859-4, iso-8859-5, iso-8859-6, iso-8859-7, iso-8859-8, iso-8859-9, jis_x0201, jis_x0212-1990, koi8-r, koi8-u, shift_jis, tis-620, us-ascii, utf-16, utf-16be, utf-16le, utf-32, utf-32be, utf-32le, utf-8, windows-1250, windows-1251, windows-1252, windows-1253, windows-1254, windows-1255, windows-1256, windows-1257, windows-1258, windows-31j, x-big5-hkscs-2001, x-big5-solaris, x-compound_text, x-euc-jp-linux, x-euc-tw, x-eucjp-open, x-ibm1006, x-ibm1025, x-ibm1046, x-ibm1097, x-ibm1098, x-ibm1112, x-ibm1122, x-ibm1123, x-ibm1124, x-ibm1364, x-ibm1381, x-ibm1383, x-ibm300, x-ibm33722, x-ibm737, x-ibm833, x-ibm834, x-ibm856, x-ibm874, x-ibm875, x-ibm921, x-ibm922, x-ibm930, x-ibm933, x-ibm935, x-ibm937, x-ibm939, x-ibm942, x-ibm942c, x-ibm943, x-ibm943c, x-ibm948, x-ibm949, x-ibm949c, x-ibm950, x-ibm964, x-ibm970, x-iscii91, x-iso-2022-cn-cns, x-iso-2022-cn-gb, x-iso-8859-11, x-jis0208, x-jisautodetect, x-johab, x-macarabic, x-maccentraleurope, x-maccroatian, x-maccyrillic, x-macdingbat, x-macgreek, x-machebrew, x-maciceland, x-macroman, x-macromania, x-macsymbol, x-macthai, x-macturkish, x-macukraine, x-ms932_0213, x-ms950-hkscs, x-ms950-hkscs-xp, x-mswin-936, x-pck, x-sjis_0213, x-utf-16le-bom, x-utf-32be-bom, x-utf-32le-bom, x-windows-50220, x-windows-50221, x-windows-874, x-windows-949, x-windows-950, x-windows-iso2022jp
+Cache-Control:max-age=0
+Connection:close
+Content-Encoding:gzip
+Content-Type:text/html;charset=UTF-8
+Date:Tue, 23 Oct 2018 02:40:20 GMT
+Expires:Tue, 23 Oct 2018 02:40:20 GMT
+Server:JDWS/1.0.0
+Transfer-Encoding:chunked
+Vary:Accept-Encoding
+Request Headers
+view source
+Accept:*/*
+Accept-Encoding:gzip, deflate, br
+Accept-Language:zh-CN,zh;q=0.9
+Connection:keep-alive
+Cookie:__jdu=15365567196731478202789; shshshfpa=af42ffe5-af5a-0497-6c34-bef1a37d2787-1536556720; shshshfpb=07be052eb24541a13576863be664840b2b03be9737749b7485b95feb43; pinId=g-aU7U9xYcr1BtJPsvi3YbV9-x-f3wj7; TrackID=1Q0RwNyebSXhSXzMHPAB7pJPu0pwN-DFkvvR4YVuFiPJ2MDE_0w01fMr37dk1J_E1nN0WkyTpp_0hfDD2pV1nS8NT60EgPhCVLNiuFo8mVJU; PCSYCityID=1; ipLoc-djd=1-72-2799-0; _gcl_au=1.1.1440135969.1539770576; 3AB9D23F7A4B3C9B=3J5J2UL3W7BNXSXSJEIIBDVLHSUC4STJMPIZSQFC3IPKFC45TSYMLSJM3L5TRBIDW4VGFWDBN5M62UQDNBX6KZFBTA; mba_muid=15365567196731478202789; retina=0; cid=3; webp=1; visitkey=70565571183859242; sc_width=1920; TrackerID=TS3BudaDk4HkbtEAIiq4Vg6kb6vqhpLTx8h_om8yjmpwuyDBLGvF1m9MK5EhbnW51FljwQA8NFvQD5TvkJnbwhurADFr_uqsH3qG-kVRGCQ; pt_key=AAFbyVY4ADBerPNMPKSNfeMWjdkSd6_5Ggz6N2IoK3R-aCR45uQOzwpI7i91X84y6KHn64Z9r8Y; pt_pin=jd_76ab57cdbf964; pt_token=difhz9kq; pwdt_id=jd_76ab57cdbf964; shshshfp=cb615772962025bfdb274701d80603e6; __wga=1539921480632.1539921448643.1539921448643.1539921448643.3.1; unpl=V2_ZzNtbRICF0UhCBEDc0lfDGIAFV0SVhRHdF1HVCsdDwU1AhsNclRCFXwURlVnGl8UZwMZXUNcRxxFCEJkeBhcBGQKElpKUnMlfQAoVzYZMgYJAF9tQVdzFXQ4RlB5HlgBYAUSVUVRQRVwDk9XehpaDG8zIl1EZ3NAJVdOVnoRXAZXAiJcclZzXhsJC1R%2fG1sBYwQUXUpQRRd1DUBdeBhfA24LIlxyVA%3d%3d; __jdv=226489691|iosapp|t_335139774|appshare|Wxfriends|1540260008232; _jrda=4; __jda=226489691.15365567196731478202789.1536556720.1540259888.1540262099.46; __jdb=226489691.2.15365567196731478202789|46.1540262099; __jdc=226489691; _jrdb=1540262407376
+Host:pa.jd.com
+Referer:https://pb.jd.com/activity/2018/18zhifu11/html/index.html
+User-Agent:Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36
+Query String Parameters
+view source
+view URL encoded
+callback:jQuery32106100370842427734_1540262407237
+entranceKey:98afa61a3824fcefb8020d935d6e7635
+_:1540262407239
+
+jQuery32106100370842427734_1540262407237({"subRuleData":"","state":1,"lotteryInfo":{"prizeId":"20181016191105055","prizeName":"京东付款码优惠券","amount":"100","prizeType":"105","prizeDesc":"京东付款码满10元减1元","usingScene":"使用京东付款码在支持京东付款码线下商户支付可享优惠","platformLimitDesc":"限支持京东付款码线下商户使用","assignedAmountTip":"满10.00元可用"},"subRuleCode":""})
+
+
+闪付10-1
+Request URL:https://pa.jd.com/prize/center/h5/draw?callback=jQuery32106100370842427734_1540262407237&entranceKey=6c576852a825dabba01dc7f360ecd357&_=1540262407240
+Request Method:GET
+Status Code:200 OK
+Remote Address:106.39.169.59:443
+Referrer Policy:no-referrer-when-downgrade
+Response Headers
+view source
+Accept-Charset:big5, big5-hkscs, euc-jp, euc-kr, gb18030, gb2312, gbk, ibm-thai, ibm00858, ibm01140, ibm01141, ibm01142, ibm01143, ibm01144, ibm01145, ibm01146, ibm01147, ibm01148, ibm01149, ibm037, ibm1026, ibm1047, ibm273, ibm277, ibm278, ibm280, ibm284, ibm285, ibm290, ibm297, ibm420, ibm424, ibm437, ibm500, ibm775, ibm850, ibm852, ibm855, ibm857, ibm860, ibm861, ibm862, ibm863, ibm864, ibm865, ibm866, ibm868, ibm869, ibm870, ibm871, ibm918, iso-2022-cn, iso-2022-jp, iso-2022-jp-2, iso-2022-kr, iso-8859-1, iso-8859-13, iso-8859-15, iso-8859-2, iso-8859-3, iso-8859-4, iso-8859-5, iso-8859-6, iso-8859-7, iso-8859-8, iso-8859-9, jis_x0201, jis_x0212-1990, koi8-r, koi8-u, shift_jis, tis-620, us-ascii, utf-16, utf-16be, utf-16le, utf-32, utf-32be, utf-32le, utf-8, windows-1250, windows-1251, windows-1252, windows-1253, windows-1254, windows-1255, windows-1256, windows-1257, windows-1258, windows-31j, x-big5-hkscs-2001, x-big5-solaris, x-compound_text, x-euc-jp-linux, x-euc-tw, x-eucjp-open, x-ibm1006, x-ibm1025, x-ibm1046, x-ibm1097, x-ibm1098, x-ibm1112, x-ibm1122, x-ibm1123, x-ibm1124, x-ibm1364, x-ibm1381, x-ibm1383, x-ibm300, x-ibm33722, x-ibm737, x-ibm833, x-ibm834, x-ibm856, x-ibm874, x-ibm875, x-ibm921, x-ibm922, x-ibm930, x-ibm933, x-ibm935, x-ibm937, x-ibm939, x-ibm942, x-ibm942c, x-ibm943, x-ibm943c, x-ibm948, x-ibm949, x-ibm949c, x-ibm950, x-ibm964, x-ibm970, x-iscii91, x-iso-2022-cn-cns, x-iso-2022-cn-gb, x-iso-8859-11, x-jis0208, x-jisautodetect, x-johab, x-macarabic, x-maccentraleurope, x-maccroatian, x-maccyrillic, x-macdingbat, x-macgreek, x-machebrew, x-maciceland, x-macroman, x-macromania, x-macsymbol, x-macthai, x-macturkish, x-macukraine, x-ms932_0213, x-ms950-hkscs, x-ms950-hkscs-xp, x-mswin-936, x-pck, x-sjis_0213, x-utf-16le-bom, x-utf-32be-bom, x-utf-32le-bom, x-windows-50220, x-windows-50221, x-windows-874, x-windows-949, x-windows-950, x-windows-iso2022jp
+Cache-Control:max-age=0
+Connection:close
+Content-Encoding:gzip
+Content-Type:text/html;charset=UTF-8
+Date:Tue, 23 Oct 2018 02:41:11 GMT
+Expires:Tue, 23 Oct 2018 02:41:11 GMT
+Server:JDWS/1.0.0
+Transfer-Encoding:chunked
+Vary:Accept-Encoding
+Request Headers
+view source
+Accept:*/*
+Accept-Encoding:gzip, deflate, br
+Accept-Language:zh-CN,zh;q=0.9
+Connection:keep-alive
+Cookie:__jdu=15365567196731478202789; shshshfpa=af42ffe5-af5a-0497-6c34-bef1a37d2787-1536556720; shshshfpb=07be052eb24541a13576863be664840b2b03be9737749b7485b95feb43; pinId=g-aU7U9xYcr1BtJPsvi3YbV9-x-f3wj7; TrackID=1Q0RwNyebSXhSXzMHPAB7pJPu0pwN-DFkvvR4YVuFiPJ2MDE_0w01fMr37dk1J_E1nN0WkyTpp_0hfDD2pV1nS8NT60EgPhCVLNiuFo8mVJU; PCSYCityID=1; ipLoc-djd=1-72-2799-0; _gcl_au=1.1.1440135969.1539770576; 3AB9D23F7A4B3C9B=3J5J2UL3W7BNXSXSJEIIBDVLHSUC4STJMPIZSQFC3IPKFC45TSYMLSJM3L5TRBIDW4VGFWDBN5M62UQDNBX6KZFBTA; mba_muid=15365567196731478202789; retina=0; cid=3; webp=1; visitkey=70565571183859242; sc_width=1920; TrackerID=TS3BudaDk4HkbtEAIiq4Vg6kb6vqhpLTx8h_om8yjmpwuyDBLGvF1m9MK5EhbnW51FljwQA8NFvQD5TvkJnbwhurADFr_uqsH3qG-kVRGCQ; pt_key=AAFbyVY4ADBerPNMPKSNfeMWjdkSd6_5Ggz6N2IoK3R-aCR45uQOzwpI7i91X84y6KHn64Z9r8Y; pt_pin=jd_76ab57cdbf964; pt_token=difhz9kq; pwdt_id=jd_76ab57cdbf964; shshshfp=cb615772962025bfdb274701d80603e6; __wga=1539921480632.1539921448643.1539921448643.1539921448643.3.1; unpl=V2_ZzNtbRICF0UhCBEDc0lfDGIAFV0SVhRHdF1HVCsdDwU1AhsNclRCFXwURlVnGl8UZwMZXUNcRxxFCEJkeBhcBGQKElpKUnMlfQAoVzYZMgYJAF9tQVdzFXQ4RlB5HlgBYAUSVUVRQRVwDk9XehpaDG8zIl1EZ3NAJVdOVnoRXAZXAiJcclZzXhsJC1R%2fG1sBYwQUXUpQRRd1DUBdeBhfA24LIlxyVA%3d%3d; __jdv=226489691|iosapp|t_335139774|appshare|Wxfriends|1540260008232; _jrda=4; __jda=226489691.15365567196731478202789.1536556720.1540259888.1540262099.46; __jdb=226489691.2.15365567196731478202789|46.1540262099; __jdc=226489691; _jrdb=1540262407376
+Host:pa.jd.com
+Referer:https://pb.jd.com/activity/2018/18zhifu11/html/index.html
+User-Agent:Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36
+Query String Parameters
+view source
+view URL encoded
+callback:jQuery32106100370842427734_1540262407237
+entranceKey:6c576852a825dabba01dc7f360ecd357
+_:1540262407240
+jQuery32106100370842427734_1540262407237({"subRuleData":"","state":1,"lotteryInfo":{"prizeId":"20181016190501704","prizeName":"京东闪付优惠券","amount":"100","prizeType":"108","prizeDesc":"京东闪付满10元减1元","usingScene":"使用京东闪付在支持银联云闪付线下商户支付可享优惠","platformLimitDesc":"限支持银联云闪付线下商户使用","assignedAmountTip":"满10.00元可用"},"subRuleCode":""})

@@ -1,0 +1,8 @@
+Please input Agent IPAddress User Password：
+172.20.255.138/deployer/Deployer_20170904
+Please input transfer IP ：
+192.168.180.163:58433
+192.168.180.164:58433
+192.168.180.165:58433
+Please input install_path:
+/apps/svr/ultrapower/
