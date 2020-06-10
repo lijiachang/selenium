@@ -1,11 +1,13 @@
-a = 0.7
-b = 0.2
-print a + b
-print 0.7 + 0.2
+# coding:utf-8
 
-if True == False or True == True and True == False:
-    print 123
+import os
+import paddlehub as hub
 
-a = [1, 2, 3, 4]
-
-print filter(lambda x: x >= 2, a)
+humanseg = hub.Module(name='deeplabv3p_xception65_humanseg')
+# 加载模型
+path = '/opt/images/'
+# 文件目录
+files = [path + i for i in os.listdir(path)]
+# 获取文件列表
+results = humanseg.segmentation(data={'image': files})
+print results
