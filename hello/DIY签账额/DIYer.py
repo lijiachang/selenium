@@ -109,10 +109,13 @@ def email():
         else:
             print time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time())), "---email发送成功！！！：", one_addrs
 
-        time.sleep(1)
+        time.sleep(3)
 
     # 关闭服务器
-    server.quit()
+    try:
+        server.quit()
+    except Exception as e:
+        print 'server.quit() ：{}'.format(e)
 
 
 while True:

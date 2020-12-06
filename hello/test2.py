@@ -1,13 +1,14 @@
 # coding:utf-8
 
-import os
-import paddlehub as hub
-
-humanseg = hub.Module(name='deeplabv3p_xception65_humanseg')
-# 加载模型
-path = '/opt/images/'
-# 文件目录
-files = [path + i for i in os.listdir(path)]
-# 获取文件列表
-results = humanseg.segmentation(data={'image': files})
-print results
+def select_more(self, sql, *args):
+    try:
+        if args:
+            self.__dict_cursor.execute(sql, args)
+        else:
+            self.__dict_cursor.execute(sql)
+        res = self.__dict_cursor.fetchall()
+        logger.info('query data success：{}'.format(sql))
+    except Exception as e:
+        logger.error('query data failure：{}'.format(e))
+        raise
+    return res
