@@ -1,9 +1,8 @@
+import os
 import re
+from concurrent.futures import ThreadPoolExecutor, wait
 
 import requests
-import os
-from concurrent.futures import ThreadPoolExecutor, wait
-import sys
 
 finishedNum = 0
 allNum = 0
@@ -32,8 +31,7 @@ def download(downloadLink, name):
 
 def merge_file(path, name):
     global fileList
-    # name_path = os.path.join(path, name)
-
+    # linux: cat index1.ts index2.ts >>3.ts
     cmd = "copy /b "
     for i in fileList:
         if i != fileList[-1]:
@@ -41,7 +39,7 @@ def merge_file(path, name):
             cmd += f"{i} + "
         else:
             i = os.path.join(path, i)
-            cmd += f"{i} {name}"
+            cmd += f'{i} "{name}"'
     # os.chdir(path)
     with open('combine.cmd', 'w') as f:
         f.write(cmd)
@@ -64,7 +62,9 @@ def downloader(url, name, threadNum):
         return
     content = requests.get(url, headers=headers).text.split('\n')
     if "#EXTM3U" not in content[0]:
-        raise BaseException(f"非M3U8链接")
+        # raise BaseException(f"非M3U8链接")
+        print(f">>>>>>>>>>>非M3U8链接<<<<<<<<")
+        return
     # .m3u8 跳转
     for video in content:
         if ".m3u8" in video:
@@ -130,13 +130,15 @@ def get_video_url(page_url):
 
 if __name__ == '__main__':
     threadNum = 50
-    pages = ['https://jiuse021.com/video/category/top-list/' + str(x) for x in range(1, 6)]
-    for page in pages:
+    start_page = int(input("从第几页开始爬:"))
+    pages = ['https://jiuse021.com/video/category/most-favorite/' + str(x) for x in range(start_page, 5000)]
 
+    for page in pages:
+        print(f'开始{page}')
         videoUrls = get_video_pages(page)
         for url in videoUrls:
             m3u8_url, title = get_video_url(url)
-            print(f'正在下载:{title}-{m3u8_url}')
+            print(f'正在下载{page}页面的:\n{title}-{m3u8_url}')
             name = title + ".ts"
             print(name)
             downloader(m3u8_url, name, threadNum)

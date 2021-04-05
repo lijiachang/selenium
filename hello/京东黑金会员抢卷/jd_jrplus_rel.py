@@ -58,7 +58,7 @@ class JRplus(object):
         while i > 0:
             i = i - 1
             self.quan1(choice_2)
-            print("尝试第" + str(10 - i) + "次")
+            print("尝试第" + str(20 - i) + "次")
             time.sleep(0.1)
 
 
