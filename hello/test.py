@@ -3,22 +3,93 @@
 """M个球编号1-M，顺时针围成一个圈，从1号球开始顺时针数，每数到第N个球，将球拿出圈外，求最后剩下的一个球的编号。"""
 
 
-def get(m, n):
-    ball = range(m + 1)[1:]  # 生成一个列表，[1:] 去掉0
+# -*- coding: utf-8 -*-
 
-    while len(ball) > 1:  # 开始循环拿出球第N个球（删除第N-1索引）
-        print ball
-        if n <= len(ball):  # 第N个球 是在列表长度内的好处理，直接删掉对应的N-1索引。 然后
-            del ball[n - 1]  # 删掉对应的N-1索引
-            ball = ball[n - 1:] + ball[:n - 1] # 把N-1索引前的序列放到后面，重新组成一个列表。如果画图可以理解为，下次指针的初始位置变为N
-        else:                # 第N个球 是在列表长度以外的情况，其实就是饶了几圈的问题。用%取余数，可以得到需要删除的索引位置
-            index = (n % len(ball)) - 1
-            # print index
-            del ball[index]
-            ball = ball[index:] + ball[:index] if index != -1 else ball  # 同上解释，但是这里要注意，如果%整除了，就说明需要删除最后一位索引，索引为-1，也刚好符合，但是不需要重组列表了，
-
-    print ball
+import abc
 
 
-get(10, 3)
+class VmReceiver(object):
+    """
+    命令接收者，真正执行命令的地方
+    """
 
+    def start(self):
+        print("虚拟机开始")
+
+    def stop(self):
+        print("虚拟机停止")
+
+
+class Command(object):
+    """
+    命令抽象类
+    """
+    __metaclass__ = abc.ABCMeta
+
+    @abc.abstractmethod
+    def execute(self):
+        """
+        命令对象对外只提供 execute 方法
+        """
+        pass
+
+
+class StartVmCommand(Command):
+    """
+    开启虚拟机的命令
+    """
+
+    def __init__(self, recevier):
+        """
+        使用一个命令接收者初始化
+        """
+        self.recevier = recevier
+
+    def execute(self):
+        """
+        真正执行命令的时候命令接收者开启虚拟机
+        """
+        self.recevier.start()
+
+
+class StopVmCommand(Command):
+    """
+    停止虚拟机的命令
+    """
+
+    def __init__(self, recevier):
+        """
+        使用一个命令接收者初始化
+        """
+        self.recevier = recevier
+
+    def execute(self):
+        """
+        真正执行命令的时候命令接收者关闭虚拟机
+        """
+        self.recevier.stop()
+
+
+class ClientInvoker(object):
+    """
+    命令调用者
+    """
+
+    def __init__(self, command):
+        self.command = command
+
+    def do(self):
+        self.command.execute()
+
+
+if __name__ == '__main__':
+    recevier = VmReceiver()
+    start_command = StartVmCommand(recevier)
+    # 命令调用者同时也是客户端，通过命令实例也执行真正的操作
+    client = ClientInvoker(start_command)
+    client.do()
+
+    # 能告诉命令接收者执行不同的操作
+    stop_command = StopVmCommand(recevier)
+    client.command = stop_command
+    client.do()

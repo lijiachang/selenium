@@ -1,13 +1,11 @@
+import math
+import abc
 
+import functools
 
-import re
-import chardet
+import html
 
+print(html.unescape('%C0%B4%B5%C3%BC%B0%B3%E4%B5%E7%C2%F0'))
 
-with open('cafe.txt', 'w', encoding='utf-8') as f:
-    print(f)
-    f.write('café')
-
-with open('cafe.txt', 'rb') as f:
-    b = f.read()
-    print(chardet.detect(b)) # 中文
+import urllib.parse
+print(urllib.parse.unquote('%C0%B4%B5%C3%BC%B0%B3%E4%B5%E7%C2%F0', encoding='gbk'))

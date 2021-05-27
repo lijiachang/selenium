@@ -243,7 +243,7 @@ class AdminManage:
             print("操作失败.")
 
     def delOnePurchaser(self):
-        pur_no = input("请输入要移除的销售员的编号:").strip()
+        pur_no = input("请输入要移除的采购员的编号:").strip()
         pur = Basic.queryOnePurchase(pur_no)
         if pur == []:
             print("不存在该员工.")

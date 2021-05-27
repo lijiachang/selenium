@@ -57,13 +57,13 @@ class ShopCar:
                 break
         return res
 
-    def printList(self):
+    def printList(self, cashier_id):
         '''打印当前购物车信息
         ["商品编号", "商品名称", "商品类型","规格","单价","购买数量"]
         '''
-        table = PrettyTable(["商品编号", "商品名称", "商品类型", "规格", "单价", "购买数量"])
+        table = PrettyTable(["商品编号", "商品名称", "商品类型", "规格", "单价", "购买数量", "售货员编号"])
         for com, cnt in self.shop_list:
-            table.add_row([com.getNo(), com.getName(), com.getType(), com.getSize(), com.getPrice(), cnt])
+            table.add_row([com.getNo(), com.getName(), com.getType(), com.getSize(), com.getPrice(), cnt, cashier_id])
         print(table)
         print("总价：", self.getMonery(), end="\n\n")
 
@@ -202,7 +202,7 @@ class FrontDesk:
         while True:
             os.system("cls")
             print("当前购物车:")
-            self.car.printList()
+            self.car.printList(self.cashier_id)
             print("-------\n")
             print("1:向购物车中添加商品")
             print("2:从购物车中删除商品")
@@ -286,5 +286,5 @@ class FrontDesk:
                 num = self.getFlowNum()
                 Basic.addOneSell(self.admin.getNo(), com.getNo(), num, com_cnt, com.getPrice() * com_cnt)
             print("您已经成功购买以下商品,支付{}元 ,找零{}元 .".format(pay_money, pay_money - all_money))
-            self.car.printList()
+            self.car.printList(self.cashier_id)
             self.car.clear()
