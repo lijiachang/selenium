@@ -1,0 +1,149 @@
+{
+  "ret": true,
+  "data":
+  {
+    "headerInfo": {
+        "logoUrl": "img/logo.png",
+        "adSite": "#" 
+    },
+    "dlInfo": {
+      "dlL": [
+      ],
+      "dlR": [
+      ]
+    },
+    "tuiguangList": [],
+    "kwBannerList": [
+      {
+        "id": 1,
+        "name": "欧宝",
+        "website": "https://www.obvip16.com:6003/register/?i_code=6605513",
+        "imgUrl": "img/obda.gif"
+      },
+      {
+        "id": 2,
+        "name": "爱游戏",
+        "website": "https://www.aiyouxi46.com:6003/register/?i_code=6870999",
+        "imgUrl": "img/ayxda.gif"
+      },
+      {
+        "id": 3,
+        "name": "亚博",
+        "website": "https://www.1549yabo.com:9443/register/?i_code=5940612",
+        "imgUrl": "img/yaboda.jpg"
+      },
+      {
+        "id": 4,
+        "name": "Bwin",
+        "website": "https://61bwin.com/vip.html?c=89466036991",
+        "imgUrl": "img/bwinda.gif"
+      }
+    ],
+    "marqueeInfo":{
+      "content1": "正规网赌推荐:「亚博」「欧宝」「爱游戏」「亚博」「必赢」「华体会」专业体育投注品牌，下载app客户端存款送50%！信誉品牌，大额无忧！提款3-15分钟到账！"
+    },
+    "swiperList": [
+      {
+          "imgUrl": "img/yaboda.jpg",
+          "website": "https://www.1549yabo.com:9443/register/?i_code=5940612"
+      }
+    ],
+    "rectList": [
+      
+	  {
+          "imgUrl": "img/yabo.gif",
+          "website": "https://www.1549yabo.com:9443/register/?i_code=5940612",
+          "name": "《亚博体育-Yabo》",
+          "description": "亚洲第一！业内最高赔率，覆盖世界各地赛事，让球、大小、半全场、波胆单双、总入球、连串过关等多元竞猜。更有动画直播、视频直播，让您轻松体验  球投注，乐在其中。",
+          "tj": true
+      },
+	  {
+          "imgUrl": "img/obao.gif",
+          "website": "https://www.obvip16.com:6003/register/?i_code=6605513",
+          "name": "《欧宝体育-OB》",
+          "description": "欧宝拥有欧洲马耳他MGA、英国GC监督委员会（Gambling Commission）和菲律宾政府（PAGCOR）颁发的合法牌照。",
+          "tj": true
+      },
+	  {
+          "imgUrl": "img/ayx.gif",
+          "website": "https://www.aiyouxi46.com:6003/register/?i_code=6870999",
+          "name": "《爱游戏-AYX》",
+          "description": "亚博旗下新品牌，意甲联赛亚洲赞助商、曼联亚洲赞助商。",
+          "tj": false
+      },
+      {
+        "imgUrl": "/img/bwin.gif",
+        "website": "https://61bwin.com/vip.html?c=89466036991",
+        "name": "必赢体育-Bwin",
+        "description": "专业体育投注品牌，每周全勤最高可得8888，投注1元起天天返水1%，最高返水2%，首存100%，多重彩金优惠 值得您信赖的老品牌!",
+        "tj": true
+      },
+      {
+        "imgUrl": "img/dafa.gif",
+          "website": "https://dafa00099.com/vip.html?c=89466042422",
+          "name": "《大发国际》",
+          "description": "专注百家乐，高额反水优惠，提供AG真人、老虎机、彩票等游戏精品，最高反水2%，不计输赢，每日赠送！",
+      "tj": false
+     },
+      {
+        "imgUrl": "/img/honghelogo.png",
+        "website": "https://www.hhc569.com/?controller=user&action=tuiguangreg&c=w6k6s2s8w1l1e4t5",
+        "name": "鸿禾彩票",
+        "description": "鸿禾娱乐、主推 :分分彩，十一选五，快3，PK拾等多彩种游戏等您体验。",
+        "tj": false
+      },
+      {
+        "imgUrl": "/img/yibai.jpg",
+        "website": "https://www.04d6031a.com:6001/register/?i_code=3370441",
+        "name": "亿百体育",
+        "description": "亚博旗下 亿百体育，活动多多、优惠多多，礼金拿不停！",
+        "tj": false
+      },
+      {
+        "imgUrl": "/img/hth.jpg",
+        "website": "https://www.hth399.com:7988/register/?i_code=7446164",
+        "name": "华体会",
+        "description": "华体会平台致力为玩家提供最公正的环境，在一个结合体育博彩及网络直播的娱乐平台上尽情游戏。",
+        "tj": false
+      },
+      {
+        "imgUrl": "img/bet365.gif",
+          "website": "https://ee3659.com",
+          "name": "《BET365》",
+          "description": "BET365老牌体育平台，活动多，彩金返水送!",
+      "tj": true
+	  }
+    ],
+    "bannerList": [
+      {
+          "imgUrl": "img/obxiao.gif",
+          "website": "https://www.obvip16.com:6003/register/?i_code=6605513"
+      },
+      {
+          "imgUrl": "img/dafaxiao.gif",
+          "website": "https://dafa00099.com/vip.html?c=89466042422"
+      },
+      {
+          "imgUrl": "img/ayxxiao.gif",
+          "website": "https://www.aiyouxi46.com:6003/register/?i_code=6870999"
+      },
+      {
+          "imgUrl": "img/bwinxiao.gif",
+          "website": "https://61bwin.com/vip.html?c=89466036991"
+      }
+    ],
+    "companyBannerList": [
+      {
+          "imgUrl": "img/honghelogo.png",
+          "website": "https://www.hhc569.com/?controller=user&action=tuiguangreg&c=w6k6s2s8w1l1e4t5",
+          "name": "「鸿禾彩票」业界最齐全彩票游戏",
+          "description": "顶级在线娱乐品牌，提供体育投注，真人视讯、电子彩票等，安全可靠 1.3%返水随时结算"
+      }
+      
+    ],
+    "footerInfo": {
+      "copyright": "版权所有©2021 正规赌博网站 www.tiyuzhuce3366.com 联系我们",
+      "description": "正规赌博网掌握全面的博彩行业资讯，最具权威性。以上博彩公司本站长期沟通了解，均已交付品牌信誉金。服务优良且信誉可靠，让您无后顾之忧！通过本站进入任意平台注册的会员才能享有先行赔付资格，博彩委员会保留最终解释权。本站提供的资讯是面向全世界玩家，浏览者需遵守所在地相关法律，在任何情况下引致触犯所属地区之法律，浏览者需自行承担一切责任！"
+    }
+  }
+}
