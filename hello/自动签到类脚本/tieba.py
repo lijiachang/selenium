@@ -71,7 +71,7 @@ while n < len(bars):
     logs.append(dic)  # 日志记录
     n += 1
     time.sleep(2)
-end_time = time()
+end_time = time.time()
 t = end_time - start_time
 l = len(bars)
 failed = "\n失败列表：" + '\n'.join(failed_bar) if len(failed_bar) else ''
