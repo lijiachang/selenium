@@ -1,0 +1,5 @@
+pyautogui
+requests
+selenium
+fake_useragent
+parsel
