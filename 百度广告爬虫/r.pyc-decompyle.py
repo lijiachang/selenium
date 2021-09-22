@@ -1,4 +1,5 @@
-import sys
+# date:2021-9-22 21:33:21
+import os, sys
 
 import parsel
 import random
@@ -24,6 +25,8 @@ urllib3.disable_warnings()
 
 
 def get_random_ua():
+    """获取随机UA"""
+
     user_agent_list = [
         'Mozilla/5.0 (Windows NT 6.2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/28.0.1464.0 Safari/537.36',
         'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.16 Safari/537.36',
@@ -36,8 +39,42 @@ def get_random_ua():
         'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2224.3 Safari/537.36',
         'Mozilla/5.0 (X11; CrOS i686 3912.101.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/27.0.1453.116 Safari/537.36'
     ]
+
+    # 尝试读取本地文件获取UA
+    try:
+        with open('UserAgent.txt', 'r') as file:
+            user_agent_list = file.readlines()
+            user_agent_list = [user_agent.strip() for user_agent in user_agent_list if user_agent.strip()]
+    except Exception as e:
+        print('read UserAgent.txt failed:{}'.format(e))
+
     UserAgent = random.choice(user_agent_list)
     return UserAgent
+
+
+
+
+def check_ip(ipAddr):
+    addr = ipAddr.strip().split('.')  # 切割IP地址为一个列表
+    # print addr
+    if len(addr) != 4:  # 切割后列表必须有4个参数
+        print("check ip address failed!")
+        return False
+    for i in range(4):
+        try:
+            addr[i] = int(addr[i])  # 每个参数必须为数字，否则校验失败
+        except:
+            print("check ip address failed!")
+            return False
+        if addr[i] <= 255 and addr[i] >= 0:  # 每个参数值必须在0-255之间
+            pass
+        else:
+            print("check ip address failed!")
+            return False
+        i += 1
+    else:
+        print("check ip address success!")
+        return True
 
 
 class Spider:
@@ -54,6 +91,7 @@ class Spider:
             self.n = int(readers[4].split('=')[-1].split('#')[0].strip())
             self.db = readers[5].split('=')[-1].split('#')[0].strip()
             self.table = readers[6].split('=')[-1].split('#')[0].strip()
+            self.proxy = None
         self.conn = sqlite3.connect(self.db)
         self.cursor = self.conn.cursor()
         # 随机ua对象
@@ -69,7 +107,7 @@ class Spider:
         self.s = set()
         self.num = 1
 
-        self.init_browser()
+        # self.init_browser()
 
         start_time = time.strftime('%Y-%m-%d', time.localtime(time.time()))
         self.f = open('{}.txt'.format(start_time), 'a+', buffering=1, encoding='utf-8-sig', newline='')
@@ -99,6 +137,7 @@ class Spider:
         options.add_argument('user-agent={}'.format(user_agent))
 
         self.browser = webdriver.Chrome(options=options)
+        self.browser.set_page_load_timeout(30)  # 设置页面加载超时
         self.browser.execute_cdp_cmd('Page.addScriptToEvaluateOnNewDocument', {
             'source': "\n                    Object.defineProperty(navigator, 'webdriver', {\n                      get: () => undefined\n                    })\n                  "})
         # self.browser.maximize_window()
@@ -214,6 +253,46 @@ class Spider:
 
         return [':'.join(re.split(r'[: ]', proxy)) for proxy in proxys]
 
+    def del_cookies(self):
+        try:
+            cookies = self.browser.get_cookies()
+            print(f'''清理前cookies = {cookies}''')
+            print(u'\u5220\u9664\u5f53\u524dcookies')
+            self.browser.delete_all_cookies()
+            cookies = self.browser.get_cookies()
+            print(f'''清理后cookies = {cookies}''')
+        except Exception as e:
+            print('清理cookie失败:{}'.format(e))
+
+    def open_browser_with_proxy(self):
+        # ，打开新的浏览器
+        while True:
+            # proxy = next(proxies_cycle)
+            print(f'''使用代理信息：proxy = {self.proxy}''')
+            try:
+
+                # AutoSwitchDynProxy().re_connect_proxy()  # 更换全局代理,使用【百万动态客户端】
+
+                self.init_browser(proxy=self.proxy)
+                break
+            except Exception as e:
+                # 退出浏览器
+                self.browser.quit()
+                print(e)
+                if 'This version of' in e.__repr__():  # 浏览器和chromeDriver不匹配，退出！
+                    sys.exit(0)
+                print(f'''当前proxy = {self.proxy} 可能失效，跳过！''')
+                self.get_new_proxy()
+
+    def get_new_proxy(self):
+        self.proxy = ProxyPool.get_proxy()  # 从代理池获取一个代理IP，如114.96.167.66:4280
+        if check_ip(self.proxy.split(':')[0]):
+            print(f'获取到一个新的代理:{self.proxy}')
+        else:
+            print(f'请检查代理IP：{self.proxy}')
+            raise Exception('invalid proxy!')
+
+
     def run(self):
         print(u'\u5f00\u59cb\u81ea\u52a8\u5904\u7406')
 
@@ -233,44 +312,24 @@ class Spider:
             except:
                 pass
 
+            # 配置代理，获取一个新的代理IP
+            self.get_new_proxy()
+
             # 支持多个关键词搜索
-            try:
-                for keyword in self.keywords:
-                    self.r(keyword)  # 搜索采集
-            except Exception as e:
-                print('pass for:{}'.format(e))
-            else:
-                # 清理cookie
-                cookies = self.browser.get_cookies()
-                print(f'''清理前cookies = {cookies}''')
-                print(u'\u5220\u9664\u5f53\u524dcookies')
-                self.browser.delete_all_cookies()
-                cookies = self.browser.get_cookies()
-                print(f'''清理后cookies = {cookies}''')
+            for keyword in self.keywords:
+                # 使用代理打开新的浏览器
+                self.open_browser_with_proxy()
 
-            # 退出浏览器
-            self.browser.quit()
-
-            # 配置代理
-            # 更换user-agent
-            # ，打开新的浏览器
-            while True:
-                # proxy = next(proxies_cycle)
-                proxy = ProxyPool.get_proxy()  # 从代理池获取一个代理IP，如114.96.167.66:4280
-                print(f'''更换proxy = {proxy}''')
                 try:
-
-                    # AutoSwitchDynProxy().re_connect_proxy()  # 更换全局代理,使用【百万动态客户端】
-
-                    self.init_browser(proxy=proxy)
-                    break
+                    self.r(keyword)  # 搜索采集
                 except Exception as e:
-                    # 退出浏览器
-                    self.browser.quit()
-                    print(e)
-                    if 'This version of' in e.__repr__():  # 浏览器和chromeDriver不匹配，退出！
-                        sys.exit(0)
-                    print(f'''当前proxy = {proxy} 可能失效，跳过！''')
+                    print('pass for:{}'.format(e))
+                else:
+                    # 清理cookie
+                    self.del_cookies()
+
+                # 退出浏览器
+                self.browser.quit()
 
             self.cursor.close()
             self.conn.close()
