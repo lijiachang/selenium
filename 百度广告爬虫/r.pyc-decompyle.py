@@ -52,8 +52,6 @@ def get_random_ua():
     return UserAgent
 
 
-
-
 def check_ip(ipAddr):
     addr = ipAddr.strip().split('.')  # 切割IP地址为一个列表
     # print addr
@@ -114,7 +112,7 @@ class Spider:
 
     def init_browser(self, proxy=None):
         """
-
+        初始化打开一个PC chrome
         :param proxy: 202.20.16.82:10152
         """
         options = webdriver.ChromeOptions()
@@ -145,7 +143,32 @@ class Spider:
         url = 'https://www.baidu.com/'
         self.browser.get(url)
 
+    def init_mobile_browser(self, ):
+        """初始化一个手机chrome"""
+        options = webdriver.ChromeOptions()
+        options.add_argument('-ignore-certificate-errors')
+        options.add_argument('-ignore -ssl-errors')
+        options.add_argument('--disable-software-rasterizer')
+
+        # 初始化手机信息
+        user_agent = 'Mozilla/5.0 (Linux; Android 4.1.1; GT-N7100 Build/JRO03C) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/35.0.1916.138 Mobile Safari/537.36 T7/6.3'
+        # 指定了宽度、高度、分辨率以及ua标识
+        phone_info = {'deviceMetrics': {'width': 640,
+                                        'height': 960,
+                                        'piexelRatio': 3.0,
+                                        'userAgent': user_agent
+                                        }
+                      }
+
+        options.add_experimental_option('mobileEmulation', phone_info)
+
+        self.browser = webdriver.Chrome(options=options)
+        self.browser.set_page_load_timeout(30)  # 设置页面加载超时
+        self.wait = WebDriverWait(self.browser, 10)
+        self.browser.get('http://m.baidu.com')
+
     def parse(self):
+        """解析HTML"""
         html = self.browser.page_source
         response = parsel.Selector(text=html)
         lis = response.xpath('.//div[@id="content_left"]/div')
@@ -228,7 +251,7 @@ class Spider:
         while i < 4:
             self.parse()
             try:
-                self.browser.execute_script('window.scrollTo(0,10000)')
+                self.browser.execute_script('window.scrollTo(0,10000)')  # 滚动鼠标到页尾
                 self.wait.until(EC.element_to_be_clickable((By.CLASS_NAME, 'n'))).click()
                 time.sleep(random.uniform(self.t_min, self.t_max))
                 i += 1
@@ -291,7 +314,6 @@ class Spider:
         else:
             print(f'请检查代理IP：{self.proxy}')
             raise Exception('invalid proxy!')
-
 
     def run(self):
         print(u'\u5f00\u59cb\u81ea\u52a8\u5904\u7406')
@@ -395,8 +417,10 @@ if __name__ == '__main__':
     start = time.time()
     start_time = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(start))
     print(u'\u811a\u672c\u542f\u52a8\u5f00\u59cb\u65f6\u95f4: {}'.format(start_time))
+
     s = Spider()
     s.run()
+
     finish = time.time()
     finish_time = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(finish))
     Total_time = finish - start
