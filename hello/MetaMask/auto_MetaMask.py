@@ -1,22 +1,35 @@
 import time
 import urllib3
 from selenium import webdriver
+
 urllib3.disable_warnings()
 
-main_account_id = '0x7f62dc5eE56a58f8C2C337256D94ce5BdEa29F56'  # 需要汇入的主账户
-profileDir = r"C:\Users\li\AppData\Roaming\Mozilla\Firefox\Profiles\vhh238c2.default-release"  # 火狐浏览器的配置文件
-metamask_url = 'moz-extension://69c89b05-d8c9-4af4-adf0-f7bf77036248/home.html#unlock'  # 小狐狸钱包 扩展地址
-metamask_password = '88888888'  # 小狐狸钱包的登录密码
+# 解析配置文件
+with open('profile.ini', 'r', encoding='utf-8') as (f):
+    readers = f.readlines()
+    main_account_id = readers[0].split('=')[-1].split('#')[0].strip()
+    profileDir = readers[1].split('=')[-1].split('#')[0].strip()
+    metamask_url = readers[2].split('=')[-1].split('#')[0].strip()
+    metamask_password = readers[3].split('=')[-1].split('#')[0].strip()
 
 
 class FireFoxDriver:
     """MetaMask 10.2.2"""
+
     def __init__(self):
         profile = webdriver.FirefoxProfile(profileDir)
         self.browser = webdriver.Firefox(profile)
         self.browser.set_page_load_timeout(30)  # 设置页面加载超时
         self.browser.implicitly_wait(16)
         # 若出现浏览器闪退，尝试关闭多余的拓展插件
+
+        # 加载过滤id列表的文件
+        self.filter_ids = None
+        try:
+            with open('abandon_id.txt', 'r') as file:
+                self.filter_ids = file.readlines()
+        except Exception as e:
+            print('load abandon_id.txt failed:{}'.format(e))
 
     def login(self):
         time.sleep(2)
@@ -45,6 +58,8 @@ class FireFoxDriver:
         print('XDAI 账户列表：')
         money_total = 0
         for account in accounts_info:
+            # 兼容列表中有个多余的 , '   已导入']
+            account = account.replace('已导入', '').strip()
             if account:
                 account_name, money = account.rsplit(maxsplit=1)
                 print(format(account_name.strip(), '<10s'), money)
@@ -71,11 +86,17 @@ class FireFoxDriver:
         current_account_id = self.browser.find_element_by_xpath('//div[@class="selected-account__address"]').text
         return current_account_id
 
-    @staticmethod
-    def is_main_id(current_id_):
+    def is_main_id(self, current_id_):
         start, end = current_id_.split('...')
+        # 如果此Id是主账户ID
         if main_account_id.startswith(start) and main_account_id.endswith(end):
             return True
+        # 如果此ID是过滤列表中的ID
+        elif self.filter_ids:
+            for account_id in self.filter_ids:
+                account_id = account_id.strip()
+                if account_id.startswith(start) and account_id.endswith(end):
+                    return True
         else:
             return False
 
@@ -97,6 +118,15 @@ class FireFoxDriver:
         elements = self.browser.find_elements_by_xpath('//div[@class="send-v2__asset-dropdown__asset"]')
         for element in elements:
             if 'SANA' in element.text:
+                # 如果余额是0，则跳过
+                if element.text.split('余额 :')[1].split('SANA')[0].strip() == '0':
+                    # 使得 页面可点击
+                    element.click()
+                    # 点击右上角的取消按钮，返回账户主页
+                    button_cancel = self.browser.find_element_by_xpath(
+                        '//a[@class="button btn-link page-container__header-close-text"]')
+                    button_cancel.click()
+                    return 0
                 element.click()
 
         # 选择最大数额
