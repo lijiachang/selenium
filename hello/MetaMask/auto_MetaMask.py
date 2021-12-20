@@ -8,7 +8,7 @@ urllib3.disable_warnings()
 with open('profile.ini', 'r', encoding='utf-8') as (f):
     readers = f.readlines()
     main_account_id = readers[0].split('=')[-1].split('#')[0].strip()
-    profileDir = readers[1].split('=')[-1].split('#')[0].strip()
+    profileDir = readers[1].split('=')[-1].split('#')[0].strip()  #about:profiles
     metamask_url = readers[2].split('=')[-1].split('#')[0].strip()
     metamask_password = readers[3].split('=')[-1].split('#')[0].strip()
 
@@ -32,7 +32,7 @@ class FireFoxDriver:
             print('load abandon_id.txt failed:{}'.format(e))
 
     def login(self):
-        time.sleep(2)
+        time.sleep(200)
         self.browser.get(metamask_url)
         elem = self.browser.find_element_by_id("password")
         elem.send_keys(metamask_password)  # 发送到输入框关键词
@@ -155,6 +155,7 @@ class FireFoxDriver:
 
 if __name__ == '__main__':
     browser = FireFoxDriver()
+
     browser.login()  # 登录
     browser.get_account_list_info()  # 统计账户信息
     total_sana = 0

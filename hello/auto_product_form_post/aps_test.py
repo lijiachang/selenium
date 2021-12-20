@@ -17,8 +17,8 @@ db_file_name = 'inventory_sku_20211106.txt'  # 读取的数据库文件
 number_of_domain = 1  # 网站的序号，比如有10个网站，需要挂10个脚本，分别改为1、2、3...10
 
 # 配置定时任务
-daily_task = 10  # 每天发布的文章数量
-job_time = '02:30'  # 每天的什么时候发布
+daily_task = 2  # 每天发布的文章数量
+job_time = '20:50'  # 每天的什么时候发布
 ######################################################################################################################
 
 common_headers = """Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
@@ -154,10 +154,7 @@ class ArticleForm:
         access_key = None
         if ret:
             access_key = ret.group(1)
-            logger.info('get access_key:{}'.format(access_key))
-        else:
-            logger.info('get access_key err rep.text:{}'.format(rep.text))
-
+        logger.info('get access_key:{}'.format(access_key))
         cat_ids = self.get_cat_ids_by_text(rep.text)
         return access_key, cat_ids
 
@@ -229,7 +226,7 @@ class ArticleForm:
         """爬取所有的网络略缩图, 大约有2000多个"""
         logger.info('开始采集网络略缩图：')
         remote_images = []
-        for cat_id in range(21):  # 21 分类：无分组、微信采集、001、002、003......
+        for cat_id in range(1):  # 21 分类：无分组、微信采集、001、002、003......
             for page in range(100):  # 页码：
                 res = self.list_remote_images(cat_id, page)
                 if res:
@@ -386,6 +383,8 @@ def gen_read_inventory(file_name):
 
 
 gen_tasks = gen_read_inventory(db_file_name)
+
+
 # 最开始初始化一次空间略缩图
 ArticleForm(common_headers, '').save_all_remote_images()
 
@@ -411,6 +410,11 @@ def job():
 
 
 job()  # 第一次运行的时候，先发布一次
+
+
+def job2():
+    print(time.time())
+
 
 scheduler = BlockingScheduler()
 # 在每天2点的25分，运行一次 job 方法
