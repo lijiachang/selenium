@@ -76,6 +76,31 @@ class SingletonATOKEN:
         else:
             pass
 
+    def get_cookies(self, url):
+        """
+        破解云锁服务器安全软件
+        来源https://blog.csdn.net/baidu_36146918/article/details/89928154
+        """
+
+        resp = requests.get(url, timeout=5)
+        cookie = {}
+        for key, value in resp.cookies.items():
+            cookie[key] = value
+            print(f'{key}: {value}')
+        security_session_verify = resp.cookies.get('security_session_verify')
+
+        resp = requests.get(
+            '{}{}'.format(url, '?security_verify_data=313932302c31303830'),
+            cookies=cookie
+        )
+
+        for key, value in resp.cookies.items():
+            cookie[key] = value
+            print(f'{key}: {value}')
+        security_session_mid_verify = resp.cookies.get('security_session_mid_verify')
+        return security_session_verify, security_session_mid_verify
+
+
     def login(self):
         """登录成功后 获取到 KT-GUID=KT-6969005D94A0D1451DC6CCC9AEB768A4  KT-ATOKEN=1-KT187E19B8C8329363D31F06B00CC8434F"""
         headers = """Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
@@ -83,7 +108,7 @@ Accept-Encoding: gzip, deflate
 Accept-Language: zh-CN,zh;q=0.9
 Cache-Control: max-age=0
 Content-Type: application/x-www-form-urlencoded
-Cookie: KT-GUID=KT-69F23C0DF1D726B30D8AB94F81633E2A; KT-ADMIN=admin; security_session_verify=c01aefbdeed31a21ec9bd6f056dcb66e; srcurl=687474703a2f2f7777772e636875616e676a696177616e672e636f6d2f61646d696e2f3f696e6465782d6c6f67696e; security_session_mid_verify=70d96eeba917702efcd3a0a9fb8b404c
+Cookie: KT-GUID=KT-69F23C0DF1D726B30D8AB94F81633E2A; KT-ADMIN=admin; security_session_verify={1}; security_session_mid_verify={2}
 Host: {0}
 Origin: http://{0}
 Proxy-Connection: keep-alive
@@ -95,8 +120,11 @@ User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
                 'admin_pwd': password}
 
         url = 'http://{}/admin/?index-login'.format(domain)
+        security_session_verify,security_session_mid_verify = self.get_cookies(url)
         rep = requests.post(url, data=form,
-                            headers=get_headers(headers.format(domain)), allow_redirects=False)
+                            headers=get_headers(
+                                headers.format(domain, security_session_verify, security_session_mid_verify)),
+                            allow_redirects=False)
 
         re_match = re.match('KT-ATOKEN=(.*?);', rep.headers.get('Set-Cookie'))
         if re_match:
@@ -309,6 +337,7 @@ gen_tasks = gen_read_inventory(db_file_name)
 
 
 # 若出现错误，重试3次，每次间隔1小时
+@retry(stop_max_attempt_number=3, wait_fixed=1000 * 60 * 60)
 def job():
     for _ in range(daily_task):
         try:
