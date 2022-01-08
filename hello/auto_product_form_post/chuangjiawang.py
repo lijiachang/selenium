@@ -16,7 +16,7 @@ username = 'admin'  # 后台管理用户名
 password = 'zgMPGiiYytigU0b'  # 后台管理密码
 
 images_path = '/root/tu01'  # 图片库路径目录
-db_file_name = 'inventory_sku_20211106.txt'  # 读取的数据库文件的路径
+db_file_name = '/root/auto/inventory_sku_20211223.txt'  # 读取的数据库文件的路径
 number_of_domain = 1  # 网站的序号，比如有10个网站，需要挂10个脚本，分别改为1、2、3...10
 
 # 配置定时任务
@@ -29,7 +29,7 @@ Accept-Encoding: gzip, deflate
 Accept-Language: zh-CN,zh;q=0.9
 Cache-Control: max-age=0
 Connection: keep-alive
-Cookie: KT-GUID=KT-69F23C0DF1D726B30D8AB94F81633E2A; KT-ADMIN=admin; security_session_verify=c01aefbdeed31a21ec9bd6f056dcb66e; srcurl=687474703a2f2f7777772e636875616e676a696177616e672e636f6d2f61646d696e2f3f696e6465782d6c6f67696e; security_session_mid_verify=70d96eeba917702efcd3a0a9fb8b404c; KT-ATOKEN={token}
+Cookie: KT-GUID=KT-69F23C0DF1D726B30D8AB94F81633E2A; KT-ADMIN=admin; security_session_verify={security_session_verify}; security_session_mid_verify={security_session_mid_verify}; KT-ATOKEN={token}
 Host: {domain}
 Origin: http://{domain}
 Referer: http://{domain}/admin/?article/article-create.html
@@ -71,7 +71,7 @@ class SingletonATOKEN:
 
     def __init__(self):
         if not self.__init_flag:
-            self.token = self.login()
+            self.token, self.security_session_verify, self.security_session_mid_verify = self.login()
             self.__init_flag = True
         else:
             pass
@@ -100,7 +100,6 @@ class SingletonATOKEN:
         security_session_mid_verify = resp.cookies.get('security_session_mid_verify')
         return security_session_verify, security_session_mid_verify
 
-
     def login(self):
         """登录成功后 获取到 KT-GUID=KT-6969005D94A0D1451DC6CCC9AEB768A4  KT-ATOKEN=1-KT187E19B8C8329363D31F06B00CC8434F"""
         headers = """Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
@@ -120,7 +119,7 @@ User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
                 'admin_pwd': password}
 
         url = 'http://{}/admin/?index-login'.format(domain)
-        security_session_verify,security_session_mid_verify = self.get_cookies(url)
+        security_session_verify, security_session_mid_verify = self.get_cookies(url)
         rep = requests.post(url, data=form,
                             headers=get_headers(
                                 headers.format(domain, security_session_verify, security_session_mid_verify)),
@@ -130,18 +129,22 @@ User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
         if re_match:
             token = re_match.group(1)
             logger.info('登录成功: KT-ATOKEN=={}'.format(token))
-            return token
+            return token, security_session_verify, security_session_mid_verify
         else:
             logger.info('登录失败:')
             logger.info(rep.text)
-            return False
+            return False, False, False
 
 
 class ArticleForm:
 
     def __init__(self, headers_raw, line: LINE):
         self.token = SingletonATOKEN().token
-        self.headers = get_headers(headers_raw.format(domain=domain, token=self.token))
+        self.security_session_verify = SingletonATOKEN().security_session_verify
+        self.security_session_mid_verify = SingletonATOKEN().security_session_mid_verify
+        self.headers = get_headers(
+            headers_raw.format(domain=domain, token=self.token, security_session_verify=self.security_session_verify,
+                               security_session_mid_verify=self.security_session_mid_verify))
         self.city_id_map = self.init_city_id_map()
         self.line = line
 
