@@ -26,7 +26,7 @@ Accept-Encoding: gzip, deflate
 Accept-Language: zh-CN,zh;q=0.9,en;q=0.8
 Cache-Control: max-age=0
 Content-Type: application/x-www-form-urlencoded
-Cookie: PHPSESSID={php_session_id}
+Cookie: security_session_verify={security_session_verify}; security_session_mid_verify={security_session_mid_verify}; PHPSESSID={php_session_id}
 Host: {domain}
 Origin: http://{domain}
 Proxy-Connection: keep-alive
@@ -69,7 +69,7 @@ class SingletonPHPSESSID:
 
     def __init__(self):
         if not self.__init_flag:
-            self.session_id = self.login()
+            self.session_id, self.security_session_verify, self.security_session_mid_verify = self.login()
             self.__init_flag = True
         else:
             pass
@@ -82,7 +82,7 @@ Accept-Language: zh-CN,zh;q=0.9,en;q=0.8
 Cache-Control: max-age=0
 Connection: keep-alive
 Content-Type: application/x-www-form-urlencoded
-Cookie: PHPSESSID={session_id}
+Cookie: security_session_verify={security_session_verify}; security_session_mid_verify={security_session_mid_verify}; PHPSESSID={session_id}
 Host: {domain}
 Origin: http://{domain}
 Referer: http://{domain}/index.php?m=site&c=index&a=login
@@ -91,34 +91,65 @@ User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like
         form = {'username': username,
                 'password': password}
         url = 'http://www.taizhou66.com/index.php?m=site&c=index&a=login'
-        _session_id = self.get_session_id()
+        _session_id, security_session_verify, security_session_mid_verify = self.get_session_id()
         rep = requests.post(url, data=form,
-                            headers=get_headers(headers.format(domain=domain, session_id=_session_id)))
+                            headers=get_headers(headers.format(domain=domain, session_id=_session_id,
+                                                               security_session_verify=security_session_verify,
+                                                               security_session_mid_verify=security_session_mid_verify)))
         if '登录成功' in rep.text:
             logger.info('登录成功: _session_id={}'.format(_session_id))
-            return _session_id
+            return _session_id, security_session_verify, security_session_mid_verify
         else:
             logger.info(rep.text)
-            return False
+            return False, False, False
+
+    def get_cookies(self, url):
+        """
+        破解云锁服务器安全软件
+        来源https://blog.csdn.net/baidu_36146918/article/details/89928154
+        """
+
+        resp = requests.get(url, timeout=5)
+        cookie = {}
+        for key, value in resp.cookies.items():
+            cookie[key] = value
+            print(f'{key}: {value}')
+        security_session_verify = resp.cookies.get('security_session_verify')
+
+        resp = requests.get(
+            '{}{}'.format(url, '?security_verify_data=313932302c31303830'),
+            cookies=cookie
+        )
+
+        for key, value in resp.cookies.items():
+            cookie[key] = value
+            print(f'{key}: {value}')
+        security_session_mid_verify = resp.cookies.get('security_session_mid_verify')
+        return security_session_verify, security_session_mid_verify
 
     def get_session_id(self):
         """获取响应标头里面的id
         Set-Cookie: PHPSESSID=pe9a66n4ffcuiddahf5rj8s4tp; path=/
         """
-        headers = f"""Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+        headers = """Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
 Accept-Encoding: gzip, deflate
 Accept-Language: zh-CN,zh;q=0.9,en;q=0.8
 Connection: keep-alive
 Host: {domain}
+Cookie: security_session_verify={security_session_verify}; security_session_mid_verify={security_session_mid_verify}
 Upgrade-Insecure-Requests: 1
 User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36"""
 
         url = domain_index
-        rep = requests.get(url, allow_redirects=False, headers=get_headers(headers.format(domain=domain)))
+        security_session_verify, security_session_mid_verify = self.get_cookies(url)
+        rep = requests.get(url, allow_redirects=False, headers=get_headers(
+            headers.format(domain=domain, security_session_verify=security_session_verify,
+                           security_session_mid_verify=security_session_mid_verify)))
         PHPSESSID = rep.headers.get('Set-Cookie')  # PHPSESSID=pe9a66n4ffcuiddahf5rj8s4tp; path=/
         logger.info('login get response headers Set-Cookie:{}'.format(PHPSESSID))
         PHPSESSID = PHPSESSID.split(';')[0].split('=')[1]  # pe9a66n4ffcuiddahf5rj8s4tp
-        return PHPSESSID
+        logger.info('login PHPSESSID:{}'.format(PHPSESSID))
+        return PHPSESSID, security_session_verify, security_session_mid_verify
 
 
 class ArticleForm:
@@ -126,7 +157,11 @@ class ArticleForm:
 
     def __init__(self, headers_raw, line: LINE):
         self.php_session_id = SingletonPHPSESSID().session_id
-        self.headers = get_headers(headers_raw.format(domain=domain, php_session_id=self.php_session_id))
+        self.security_session_verify = SingletonPHPSESSID().security_session_verify
+        self.security_session_mid_verify = SingletonPHPSESSID().security_session_mid_verify
+        self.headers = get_headers(headers_raw.format(domain=domain, php_session_id=self.php_session_id,
+                                                      security_session_verify=self.security_session_verify,
+                                                      security_session_mid_verify=self.security_session_mid_verify))
         self.access_key, self.cat_id_map = self.init_publish_page()
         self.line = line
 
@@ -327,7 +362,7 @@ class ArticleForm:
             if city_name in self.line.title:
                 form['cat_id[]'].append(cat_id)  # 在一个post中提交含有多个相同名称的数据
 
-        url = 'http://www.taizhou66.com/index.php?m=site&c=content&a=article_form'
+        url = 'http://{}/index.php?m=site&c=content&a=article_form'.format(domain)
         rep = requests.post(url, data=form, headers=self.headers)
         rep_text = rep.text
         if '发布成功' in rep_text:
@@ -416,5 +451,5 @@ scheduler = BlockingScheduler()
 # 在每天2点的25分，运行一次 job 方法
 hour = job_time.split(':')[0]
 minute = job_time.split(':')[1]
-scheduler.add_job(job, 'cron', hour=hour, minute=minute)
+scheduler.add_job(job, 'cron', max_instances=10, hour=hour, minute=minute, misfire_grace_time=3600)
 scheduler.start()
