@@ -1,4 +1,5 @@
 # -*- coding:utf-8 -*-
+import os
 import random
 import requests
 import re
@@ -13,6 +14,8 @@ domain = 'yiyou.yueshengj.com'  # 网站地址 www.xxx.com
 domain_index = 'http://yiyou.yueshengj.com/login.php?s=Admin/login'  # 管理后台的页面URL
 username = 'adminyiyou'  # 后台管理用户名
 password = '8210784124yiyou'  # 后台管理密码
+
+images_path = 'E:\地中海家装案例（70套 1493张 4.04G）\裁剪大小'  # 图片库路径目录
 db_file_name = 'inventory_sku_20211106.txt'  # 读取的数据库文件
 number_of_domain = 1  # 网站的序号，比如有10个网站，需要挂10个脚本，分别改为1、2、3...10
 
@@ -31,6 +34,21 @@ Host: {domain}
 Origin: http://{domain}
 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.69 Safari/537.36
 X-Requested-With: XMLHttpRequest"""
+
+# 发布的headers样例：
+"""Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-CN,zh;q=0.9
+Cache-Control: max-age=0
+Connection: keep-alive
+Content-Length: 657
+Content-Type: application/x-www-form-urlencoded
+Cookie: security_session_verify=157a6ddd471ef0b999f7664ca8e96d12; PHPSESSID=nhl6c9c6se7bbnlflq89cvkm0a; admin_lang=cn; home_lang=cn; ENV_UPHTML_AFTER=%7B%22seo_uphtml_after_home%22%3A%221%22%2C%22seo_uphtml_after_channel%22%3A%221%22%2C%22seo_uphtml_after_pernext%22%3A%221%22%7D; users_id=1; admin-arctreeClicked-Arr=null; ENV_GOBACK_URL=%2Flogin.php%3Fm%3Dadmin%26c%3DArchives%26a%3Dindex_archives%26lang%3Dcn; ENV_LIST_URL=%2Flogin.php%3Fm%3Dadmin%26c%3DArchives%26a%3Dindex_archives%26lang%3Dcn; admin-treeClicked-Arr=null; workspaceParam=index%7CArchives; ENV_IS_UPHTML=0
+Host: yiyou.yueshengj.com
+Origin: http://yiyou.yueshengj.com
+Referer: http://yiyou.yueshengj.com/login.php?m=admin&c=Article&a=add&typeid=1&gourl=http%3A%2F%2Fyiyou.yueshengj.com%2Flogin.php%3Fm%3Dadmin%26c%3DArchives%26a%3Dindex_archives%26typeid%3D1%26lang%3Dcn&lang=cn
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.69 Safari/537.36"""
 
 LINE = namedtuple('LINE', 'id create_time title key_words tag content')
 
@@ -152,219 +170,165 @@ class ArticleForm:
         self.headers = get_headers(headers_raw.format(domain=domain, PHPSESSID=self.php_session_id,
                                                       security_session_verify=self.security_session_verify,
                                                       security_session_mid_verify=self.security_session_mid_verify))
-        self.access_key, self.cat_id_map = self.init_publish_page()
+        # self.access_key, self.cat_id_map = self.init_publish_page()
         self.line = line
 
     def publish(self):
-        # 上传tag
-        tag_ids = self.post_tag(self.line.tag.strip())
-        tag_content = ',' + ','.join(str(tag_in) for tag_in in tag_ids)
+        """发布一篇文章"""
+
 
         # 上传略缩图
         # 随机一个网络略缩图
-        random_image = random.choice(self.remote_images)
-        # {'id': 1869, 'cat_id': 20, 'filename': '/storage/8603/imagesclass/20190302/005_271.jpg', 'filesize': 40775, 'status': 1, 'status_use': 0, 'addtime': 1551527430}
-        image_path = random_image['filename']
-        self.post_remote_image(image_path)
+        # random_image = random.choice(self.remote_images)
+        # # {'id': 1869, 'cat_id': 20, 'filename': '/storage/8603/imagesclass/20190302/005_271.jpg', 'filesize': 40775, 'status': 1, 'status_use': 0, 'addtime': 1551527430}
+        # image_path = random_image['filename']
+        # self.post_remote_image(image_path)
+
+        # 在目录下随机找一张图片
+        random_image_file_path = random.choice(self.get_raw_file_list(images_path))
+        # 上传图片到网站
+        self.post_image(random_image_file_path)
+
 
         # 发布文章
-        publish_result = self.post_article(tag_content)
+        publish_result = self.post_article(self.line.tag)
 
-    def init_publish_page(self):
-        """1.获取发布页面的access_key值，虽然自己随机一个也能用，但是防止撞库，还是从页面获取值比较好
-           2.获取发布页的 城市和id 映射关系"""
-        url = 'http://www.taizhou66.com/index.php?m=site&c=content&a=article_form'
-        rep = requests.get(url, headers=self.headers)
-        ret = re.search('<input type="hidden" name="access_key" value="(.*?)">', rep.text)
-        access_key = None
-        if ret:
-            access_key = ret.group(1)
-            logger.info('get access_key:{}'.format(access_key))
-        else:
-            logger.info('get access_key err rep.text:{}'.format(rep.text))
-
-        cat_ids = self.get_cat_ids_by_text(rep.text)
-        return access_key, cat_ids
 
     @staticmethod
-    def get_cat_ids_by_text(text):
-        """从发布页的源码中，解析出id和城市的对应关系"""
-        p = '<input id="cat_id" lay-skin="primary" type="checkbox"  name="cat_id\[\]" value="(\d+)"  title="(.*?)">'
-        ret = re.findall(p, text)
-        return dict(r for r in ret)  # e.g. {'119': '抚顺', '120': '阜新', '121': '阜阳', '122': '广安'}
+    def get_raw_file_list(path):
+        """-------------------------
+        files,names=getRawFileList(raw_data_dir)
+        files: ['datacn/dialog/one.txt', 'datacn/dialog/two.txt']
+        names: ['one.txt', 'two.txt']
+        ----------------------------"""
+        files = []
+        # names = []
+        for f in os.listdir(path):
+            if not f.endswith("~") or not f == "":  # 返回指定的文件夹包含的文件或文件夹的名字的列表
+                if f.endswith('jpg'):  # 限制jpg格式图片
+                    files.append(os.path.join(path, f))  # 把目录和文件名合成一个路径
+                    # names.append(f)
+        return files
 
-    def post_tag(self, tag_str):
-        """
-        发布标签关键词，返回每个关键词的数据标签
-        请求 URL: http://www.taizhou66.com/index.php?m=mod&c=tag_article&a=ajax_form&tag_str=n%E9%B9%A4%E5%B2%97,50,%E5%AD%90,%E6%80%8E%E4%B9%88%E8%A3%85%E4%BF%AE,%E8%AE%BE%E8%AE%A1%E5%9B%BE
-        表单：
-        m: mod
-        c: tag_article
-        a: ajax_form
-        tag_str: n鹤岗,50,子,怎么装修,设计图
-
-        {"status":0,"names":["n\u9e64\u5c97","50","\u5b50","\u600e\u4e48\u88c5\u4fee","\u8bbe\u8ba1\u56fe"],"ids":["3376",233,194,116,265]}
-
-        :param tag_str: 多个标签请用英文逗号（,）分开 eg.鹤岗,50,子,怎么装修,设计图
-        :return:
-        """
-
-        form = {'m': 'mod',
-                'c': 'tag_article',
-                'a': 'ajax_form',
-                'tag_str': tag_str}
-        url = 'http://www.taizhou66.com/index.php'
-        rep = requests.post(url, data=form, headers=self.headers)
-        ids = rep.json().get('ids')
-        return ids
-
-    def post_image(self):
+    def post_image(self, image_path):
         """上传略缩图
-        请求 URL: http://www.taizhou66.com/index.php?m=mod&c=thumb&a=thumb_upload
+        请求 URL: http://yiyou.yueshengj.com/login.php?m=admin&c=Ueditor&a=imageUp&savepath=allimg&pictitle=banner&dir=images&is_water=1&lang=cn
+
         表单：
-        logo: (二进制)
-        typename: article
-        item_id: 20203
-        access_key: 6173e1d669410
+        _ajax: 1
+        file: （二进制）
+        type_id: 0
+
         响应：
-        上传第一个图 {"status":1,"msg":"\u5df2\u4e0a\u4f20\u6210\u529f","logo":"\/storage\/article\/20211023\/20211023182059_77963.jpg","id":"1122"}
-        上传第二个图 {"status":1,"msg":"\u5df2\u4e0a\u4f20\u6210\u529f","logo":"\/storage\/article\/20211023\/20211023183010_42588.jpg","id":"1123"}
+        height: 270
+        img_id: "2"
+        original: "001_42.JPG"
+        path: "images"
+        state: "SUCCESS"
+        time: 1645107945
+        title: "banner"
+        url: "/uploads/allimg/20220217/1-22021H22545306.JPG"
+        width: 420
         """
+        url = 'http://{}/login.php?m=admin&c=Ueditor&a=imageUp&savepath=allimg&pictitle=banner&dir=images&is_water=1&lang=cn'.format(domain)
+        form = {'_ajax': 1,
+                'type_id': 0}
+        multipart_form_data = {key: (None, value) for key, value in form.items()}
+        multipart_form_data['file'] = ('001_01.jpg', open('001_01.jpg', 'rb'), 'image/jpeg')  # todo 临时hack
 
-    def list_remote_images(self, cat_id, page):
-        """查询空间中的略缩图
-        请求 URL: http://www.taizhou66.com/index.php?m=mod&c=thumb&a=picture_list
+        # files = {
+        #     "file": (image_path, open(image_path, 'rb'), "image/jpeg")
+        # }
+        rep = requests.post(url, files=multipart_form_data, headers=self.headers)
+        rep_text = rep.text
+        if '成功' in rep_text:
+            pass
 
-        page: 2     #该分类下的页码
-        cat_id: 2   #分类
 
-        返回图片的ID，文件路径
-        {"data":[{"id":2000,"cat_id":2,"filename":"\/storage\/8603\/imagesclass\/20190302\/20190302195036_50079.jpg","filesize":120272,"status":1,"status_use":0,"addtime":1551527436},{"id":1999,"cat_id":2,"filename":"\/storage\/8603\/imagesclass\/20190302\/20190302195036_89379.jpg","filesize":150505,"status":1,"status_use":0,"addtime":1551527435},{"id":1998,"cat_id":2,"filename":"\/storage\/8603\/imagesclass\/20190302\/20190302195036_44823.jpg","filesize":97095,"status":1,"status_use":0,"addtime":1551527436},{"id":1997,"cat_id":2,"filename":"\/storage\/8603\/imagesclass\/20190302\/20190302195036_85689.jpg","filesize":86456,"status":1,"status_use":0,"addtime":1551527435},{"id":1996,"cat_id":2,"filename":"\/storage\/8603\/imagesclass\/20190302\/20190302195036_26718.jpg","filesize":100938,"status":1,"status_use":1,"addtime":1551527435},{"id":1995,"cat_id":2,"filename":"\/storage\/8603\/imagesclass\/20190302\/20190302195035_98170.jpg","filesize":74665,"status":1,"status_use":0,"addtime":1551527435},{"id":1994,"cat_id":2,"filename":"\/storage\/8603\/imagesclass\/20190302\/20190302195035_90379.jpg","filesize":85512,"status":1,"status_use":0,"addtime":1551527435},{"id":1993,"cat_id":2,"filename":"\/storage\/8603\/imagesclass\/20190302\/20190302195035_58549.jpg","filesize":135324,"status":1,"status_use":0,"addtime":1551527435},{"id":1992,"cat_id":2,"filename":"\/storage\/8603\/imagesclass\/20190302\/20190302195035_83925.jpg","filesize":132173,"status":1,"status_use":0,"addtime":1551527435}]}
-
-        """
-        url = "http://www.taizhou66.com/index.php?m=mod&c=thumb&a=picture_list"
-
-        form = {'page': page,
-                'cat_id': cat_id}
-        rep = requests.post(url, data=form, headers=self.headers)
-        logger.info(rep.json()['data'])
-        return rep.json()['data']
-
-    def save_all_remote_images(self):
-        """爬取所有的网络略缩图, 大约有2000多个"""
-        logger.info('开始采集网络略缩图：')
-        remote_images = []
-        for cat_id in range(21):  # 21 分类：无分组、微信采集、001、002、003......
-            for page in range(100):  # 页码：
-                res = self.list_remote_images(cat_id, page)
-                if res:
-                    remote_images += res
-                else:
-                    break
-        logger.info('共采集网络略缩图：{}'.format(len(remote_images)))
-        # {'id': 1869, 'cat_id': 20, 'filename': '/storage/8603/imagesclass/20190302/005_271.jpg', 'filesize': 40775, 'status': 1, 'status_use': 0, 'addtime': 1551527430}
-        remote_images = [image for image in remote_images if image.get('filename').endswith('jpg')]
-        logger.info('收集到jpg略缩图：{}'.format(len(remote_images)))
-        ArticleForm.remote_images = remote_images
-
-    def post_remote_image(self, file_path):
-        """上传空间中的略缩图
-        请求 URL: http://www.taizhou66.com/index.php?m=mod&c=thumb&a=picture_2_thumb
-
-        data[]: /storage/8603/imagesclass/20190410/8e1c618b31d3a5e1c631392a6c4a1415.gif     上传的是文件路径
-        typename: article
-        item_id: 0
-        access_key: 6173e78beea23
-
-        {"status":1,"msg":"\u5df2\u4e0a\u4f20\u6210\u529f","logo":"\/storage\/article\/20211023\/2021102302912_69427.gif"}
-
-        """
-        logger.info('使用空间略缩图: {}'.format(file_path))
-        form = {'data[]': file_path,
-                'typename': 'article',
-                'item_id': 0,
-                'access_key': self.access_key}
-        url = 'http://www.taizhou66.com/index.php?m=mod&c=thumb&a=picture_2_thumb'
-        rep = requests.post(url, data=form, headers=self.headers)
-        return rep.text
-
-    def check_image(self):
-        """查询略缩图
-        请求 URL: http://www.taizhou66.com/index.php?m=mod&c=thumb&a=thumb_list
-
-        item_type: 2
-        item_id: 20203
-
-        展示两个图 {"data":[{"id":1122,"uid":1,"item_type":2,"item_id":20203,"file_name":"001_51.jpg","file_location":"\/storage\/article\/20211023\/20211023182059_77963.jpg","add_time":1634984459,"access_key":"6173e1d669410","thumb":"\/storage\/article\/20211023\/thumb_pc_20211023182059_77963.jpg","status":1,"listorder":0},{"id":1123,"uid":1,"item_type":2,"item_id":20203,"file_name":"1 (9).jpg","file_location":"\/storage\/article\/20211023\/20211023183010_42588.jpg","add_time":1634985010,"access_key":"6173e1d669410","thumb":"\/storage\/article\/20211023\/thumb_pc_20211023183010_42588.jpg","status":1,"listorder":0}]}
-        """
 
     def post_article(self, tag_content):
         """发布文章内容
-        请求URL: http://www.taizhou66.com/index.php?m=site&c=content&a=article_form
+        请求URL: http://yiyou.yueshengj.com/login.php?m=admin&c=Article&a=add&lang=cn
 
         表单
-        timesend: 2021-10-23 18:20:06
-        access_key: 6173e1d669410
-        info[title]: 中国鹤岗50子怎么装修设计图
-        info[seo_title]: n鹤岗50子怎么装修设计图
-        info[keywords]: n鹤岗,50,子,怎么装修,设计图
-        info[description]: 欧式简约风格一般就是把设计的元素，色彩，原材料以及照明做到简单化
-        submit1: ok
-        info[id]: 20203  # 这个id是上传略缩图后的关联作用
-        is_auto_save: 1
-        info[status]: 1
-        status: 1
-        http_referer: http://www.taizhou66.com/index.php?m=site&c=content&a=article_index
-        cat_id[]: 35  # 发布勾选的分类，每个数字对应一个城市，可以在发布页面源码中找到
-        cat_id[]: 131 # 发布勾选的分类，每个数字对应一个城市，可以在发布页面源码中找到
-        cat_id[]: 319
-        copy_id:
-        tag_content: ,3376,233,194,116,265
-        info[filename]: 3nhg50zzmzxsjt20203
-        info[listorder]: 0
-        info[addtimeb]: 2021-10-23 18:09:46
-        iscopy: 0
-        content: <p>欧式简约风格<a data-mid="5586" href="/a/13987.html">一般</a>就是把<a data-mid="5742" href="/a/14115.html">设计</a>的元素，色彩，原材料以及照明做到<a data-mid="5516" href="/a/14009.html">简单</a>化，但是对于色彩以及材料的质感要求会比较高。如果说欧式简约风格有<a data-mid="5563" href="/a/13995.html">什么</a>共同点的话那一定是简洁、直接、功能化且贴近自然，一份宁静的欧洲风情，绝非是蛊惑人心的虚华设计影响。<a data-mid="5555" href="/a/13997.html">客厅</a>不大，但是收纳功能超级强大，整面的原木书柜，把爱书的<a data-mid="5574" href="/a/13991.html">家庭</a>收拾地干干净净。清新自然的北欧简约风格，干净的白，素雅的木色，还有强大的墙面收纳，自然而实用。狭小的厨房有着很多零碎的物品，但是北欧人家的厨房看上去总是那么整洁而有序。精心设计的角落让他们的厨房充满温馨的感觉。没有欧洲繁复的床品设计，没有中国传统床品中太多的遮拦，就是简简单单的床和床头柜搭配，北欧经典的简约风就此打造而成，但是细心的你会发现，他们在卧室背景墙上花得功夫可不少哦。</p><p><br/></p>
+        title: 标题111
+        subtitle:
+        typeid: 1
+        jumplinks:
+        tags: TAG标签1,TAG标签2,TAG标签3
+        province_id: 0
+        city_id:
+        area_id:
+        litpic_local: /uploads/allimg/210421/thumb_pc_20190314222006_73478.jpg
+        litpic_remote:
+        restric_type: 0
+        arc_level_id: 1
+        users_price:
+        part_free: 0
+        size: 1
+        addonFieldExt[content]: <p>内容121</p>
+        seo_title: SEO标题 11
+        seo_keywords: TAG标签1,TAG标签2,TAG标签3
+        seo_description: SEO描述111
+        author: adminyiyou
+        origin:
+        click: 786
+        arcrank: 0
+        add_time: 2022-02-17 21:50:07
+        tempview: view_article.htm
+        type_tempview: view_article.htm
+        htmlfilename:
+        free_content:
+        gourl:
 
-        发布成功后，rep.txt 里面有发布成功 提示
+        发布成功后，rep.txt 里面有成功发布文档提示
         """
-        form = {'timesend': time.strftime("%Y-%m-%d %H:%M:%S"),
-                'access_key': self.access_key,
-                'info[title]': self.line.title,
-                'info[seo_title]': self.line.title,
-                'info[keywords]': self.line.key_words,
-                'info[description]': self.line.content[:50],
-                'submit1': 'ok',
-                # 'info[id]': '20203', # 这个id是手动上传略缩图后的关联作用
-                'is_auto_save': '1',
-                'info[status]:': '',
-                'http_referer': 'http://{}/index.php?m=site&c=content&a=article_index'.format(domain),
-                'status': '1',
-                'cat_id[]': ['35'],  # 装修问答 是必选的分类 todo 如果没有其他分类，这样列表是否能正常识别
-                'copy_id:': '',
-                'tag_content': tag_content,
-                'info[filename]:': '',
-                'info[listorder]:': '',
-                'iscopy': '0',
-                'content': '<p>{}</p>'.format(self.line.content)}
-        # 增加cat_id 关联城市
-        for cat_id, city_name in self.cat_id_map.items():
-            if city_name in self.line.title:
-                form['cat_id[]'].append(cat_id)  # 在一个post中提交含有多个相同名称的数据
+        form = {
+            'title': self.line.title,
+            'subtitle': '',  # 副标题
+            'typeid': 1,
+            'jumplinks': '',
+            'tags': tag_content,
+            'province_id': 0,
+            'city_id': '',
+            'area_id': '',
+            'litpic_local': '',
+            'litpic_remote': '',
+            'restric_type': 0,
+            'arc_level_id': 1,
+            'users_price': '',
+            'part_free': 0,
+            'size': 1,
+            'addonFieldExt[content]': '<p>{}</p>'.format(self.line.content),
+            'seo_title': self.line.title,
+            'seo_keywords': tag_content,
+            'seo_description': self.line.content[:50],
+            'author': 'adminyiyou',
+            'origin': '',
+            'click': 786,
+            'arcrank': 0,
+            'add_time': time.strftime("%Y-%m-%d %H:%M:%S"),
+            'tempview': 'view_article.htm',
+            'type_tempview': 'view_article.htm',
+            'htmlfilename': '',
+            'free_content': '',
+            'gourl': '',}
+        #
+        # # 增加cat_id 关联城市
+        # for cat_id, city_name in self.cat_id_map.items():
+        #     if city_name in self.line.title:
+        #         form['cat_id[]'].append(cat_id)  # 在一个post中提交含有多个相同名称的数据
 
-        url = 'http://{}/index.php?m=site&c=content&a=article_form'.format(domain)
+        url = 'http://{}/login.php?m=admin&c=Article&a=add&lang=cn'.format(domain)
         rep = requests.post(url, data=form, headers=self.headers)
         rep_text = rep.text
-        if '发布成功' in rep_text:
+        if '成功' in rep_text:
             logger.info('id={} 发布成功: {}'.format(self.line.id, self.line.title))
         else:
             logger.info('！！！id={} 发布失败: {}'.format(self.line.id, self.line.title))
 
         return rep_text
 
-    def get_cat_ids(self):
-        """根据title 返回符合的cat_id列表"""
-        # return [cat_id for cat_id in cat_id_maps if cat_id in self.line.title]
 
 
 def analysis_line(line: str):
@@ -412,7 +376,7 @@ def gen_read_inventory(file_name):
 
 gen_tasks = gen_read_inventory(db_file_name)
 # 最开始初始化一次空间略缩图
-ArticleForm(common_headers, '').save_all_remote_images()
+# ArticleForm(common_headers, '').save_all_remote_images()
 
 
 # 若出现错误，重试3次，每次间隔1小时
