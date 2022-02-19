@@ -1,4 +1,5 @@
 # -*- coding:utf-8 -*-
+import json
 import os
 import random
 import requests
@@ -21,7 +22,7 @@ number_of_domain = 1  # 网站的序号，比如有10个网站，需要挂10个�
 
 # 配置定时任务
 daily_task = 10  # 每天发布的文章数量
-job_time = '02:10'  # 每天的什么时候发布
+job_time = '01:10'  # 每天的什么时候发布
 ######################################################################################################################
 
 common_headers = """Accept: application/json, text/javascript, */*; q=0.01
@@ -176,23 +177,14 @@ class ArticleForm:
     def publish(self):
         """发布一篇文章"""
 
-
         # 上传略缩图
-        # 随机一个网络略缩图
-        # random_image = random.choice(self.remote_images)
-        # # {'id': 1869, 'cat_id': 20, 'filename': '/storage/8603/imagesclass/20190302/005_271.jpg', 'filesize': 40775, 'status': 1, 'status_use': 0, 'addtime': 1551527430}
-        # image_path = random_image['filename']
-        # self.post_remote_image(image_path)
-
         # 在目录下随机找一张图片
         random_image_file_path = random.choice(self.get_raw_file_list(images_path))
         # 上传图片到网站
-        self.post_image(random_image_file_path)
-
+        image_url = self.post_image(random_image_file_path)
 
         # 发布文章
-        publish_result = self.post_article(self.line.tag)
-
+        publish_result = self.post_article(image_url)
 
     @staticmethod
     def get_raw_file_list(path):
@@ -230,23 +222,27 @@ class ArticleForm:
         url: "/uploads/allimg/20220217/1-22021H22545306.JPG"
         width: 420
         """
-        url = 'http://{}/login.php?m=admin&c=Ueditor&a=imageUp&savepath=allimg&pictitle=banner&dir=images&is_water=1&lang=cn'.format(domain)
+        url = 'http://{}/login.php?m=admin&c=Ueditor&a=imageUp&savepath=allimg&pictitle=banner&dir=images&is_water=1&lang=cn'.format(
+            domain)
         form = {'_ajax': 1,
                 'type_id': 0}
         multipart_form_data = {key: (None, value) for key, value in form.items()}
-        multipart_form_data['file'] = ('001_01.jpg', open('001_01.jpg', 'rb'), 'image/jpeg')  # todo 临时hack
+        multipart_form_data['file'] = (image_path, open(image_path, 'rb'), 'image/jpeg')
 
-        # files = {
-        #     "file": (image_path, open(image_path, 'rb'), "image/jpeg")
-        # }
-        rep = requests.post(url, files=multipart_form_data, headers=self.headers)
+        post_images_headers = self.headers.copy()
+        del post_images_headers['Content-Type']  # 记得不用填 heads中content-type ，不用传， 不用传 ，不用传, 否则上传不成功， 提示：请检查空间是否开启文件上传功能！
+
+        rep = requests.post(url, files=multipart_form_data, headers=post_images_headers)
         rep_text = rep.text
-        if '成功' in rep_text:
-            pass
+        if 'SUCCESS' in rep_text:
+            print('略缩图上传成功:{}'.format(rep_text))
+            image_url = rep.json().get('url')
+            return image_url
+        else:
+            print('略缩图上传失败:{}'.format(rep_text))
+            return ''
 
-
-
-    def post_article(self, tag_content):
+    def post_article(self, image_url):
         """发布文章内容
         请求URL: http://yiyou.yueshengj.com/login.php?m=admin&c=Article&a=add&lang=cn
 
@@ -288,11 +284,11 @@ class ArticleForm:
             'subtitle': '',  # 副标题
             'typeid': 1,
             'jumplinks': '',
-            'tags': tag_content,
+            'tags': self.line.tag,
             'province_id': 0,
             'city_id': '',
             'area_id': '',
-            'litpic_local': '',
+            'litpic_local': image_url,
             'litpic_remote': '',
             'restric_type': 0,
             'arc_level_id': 1,
@@ -301,7 +297,7 @@ class ArticleForm:
             'size': 1,
             'addonFieldExt[content]': '<p>{}</p>'.format(self.line.content),
             'seo_title': self.line.title,
-            'seo_keywords': tag_content,
+            'seo_keywords': self.line.tag,
             'seo_description': self.line.content[:50],
             'author': 'adminyiyou',
             'origin': '',
@@ -312,7 +308,7 @@ class ArticleForm:
             'type_tempview': 'view_article.htm',
             'htmlfilename': '',
             'free_content': '',
-            'gourl': '',}
+            'gourl': '', }
         #
         # # 增加cat_id 关联城市
         # for cat_id, city_name in self.cat_id_map.items():
@@ -328,7 +324,6 @@ class ArticleForm:
             logger.info('！！！id={} 发布失败: {}'.format(self.line.id, self.line.title))
 
         return rep_text
-
 
 
 def analysis_line(line: str):
@@ -375,6 +370,8 @@ def gen_read_inventory(file_name):
 
 
 gen_tasks = gen_read_inventory(db_file_name)
+
+
 # 最开始初始化一次空间略缩图
 # ArticleForm(common_headers, '').save_all_remote_images()
 
