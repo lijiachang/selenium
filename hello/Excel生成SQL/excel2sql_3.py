@@ -1,7 +1,6 @@
 # coding: utf-8
 
 import sys
-import xlrd
 import time
 from openpyxl import load_workbook
 
@@ -9,8 +8,7 @@ from openpyxl import load_workbook
 用于Go-agent项目读取excel文件生成sql   Oracle数据库专用
 By：李家昌  最后修改：2018.04.18
 """
-reload(sys)
-sys.setdefaultencoding("utf-8")
+
 #######################################################################
 data = load_workbook(u"UltraAgent脚本信息集.xlsx")  # 读取excel表
 sheet = data[u"MySQL"]                              # 读取表名

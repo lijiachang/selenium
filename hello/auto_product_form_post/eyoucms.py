@@ -106,6 +106,7 @@ class SingletonPHPSESSID:
             logger.info('登录成功: _session_id={}'.format(_session_id))
             return _session_id, security_session_verify, security_session_mid_verify
         else:
+            logger.info('登录失败: ')
             logger.info(rep.text)
             return False, False, False
 
@@ -235,11 +236,11 @@ class ArticleForm:
         rep = requests.post(url, files=multipart_form_data, headers=post_images_headers)
         rep_text = rep.text
         if 'SUCCESS' in rep_text:
-            print('略缩图上传成功:{}'.format(rep_text))
+            logger.info('略缩图上传成功:{}'.format(rep_text))
             image_url = rep.json().get('url')
             return image_url
         else:
-            print('略缩图上传失败:{}'.format(rep_text))
+            logger.info('略缩图上传失败:{}'.format(rep_text))
             return ''
 
     def post_article(self, image_url):
@@ -347,8 +348,34 @@ def analysis_line(line: str):
 published_titles = {}  # 统计读取到的title和出现的次数
 
 
+def read_title_from_cache():
+    """读取缓存line"""
+    try:
+
+        with open('cache', 'r') as file_ob:
+            line = file_ob.read()
+    except Exception as e:
+        logger.info('cant read_title_from_cache:{}'.format(e))
+        line = ''
+    return line
+
+
+def write_title_to_cache(line):
+    """缓存line"""
+    with open('cache', 'w') as file_ob:
+        file_ob.write(line)
+
+
 def gen_read_inventory(file_name):
+    cache_line = read_title_from_cache()
+
     with open(file_name, 'r', encoding='utf-8') as file_handler:
+        if cache_line:  # 读取到上次暂停的标题
+            while True:
+                line = file_handler.readline()
+                if line == cache_line:
+                    break
+
         while True:
             line = file_handler.readline()
             if line:
@@ -364,6 +391,7 @@ def gen_read_inventory(file_name):
                     logger.error('read line err:{}'.format(e))
                     continue
                 else:
+                    write_title_to_cache(line)
                     yield line_
             else:
                 break
@@ -379,6 +407,8 @@ gen_tasks = gen_read_inventory(db_file_name)
 # 若出现错误，重试3次，每次间隔1小时
 @retry(stop_max_attempt_number=3, wait_fixed=1000 * 60 * 60)
 def job():
+    # 执行本次任务前先登录
+    SingletonPHPSESSID.__init_flag = False
     for _ in range(daily_task):
         try:
             line_info = next(gen_tasks)
@@ -392,8 +422,6 @@ def job():
             time.sleep(1)
         except StopIteration:
             logger.info('{} 内的文章已经全部发布完成，请更新'.format(db_file_name))
-    # 确保下次任务需要先登录
-    SingletonPHPSESSID.__init_flag = False
 
 
 job()  # 第一次运行的时候，先发布一次

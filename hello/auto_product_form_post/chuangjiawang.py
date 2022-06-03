@@ -8,6 +8,7 @@ import time
 from apscheduler.schedulers.blocking import BlockingScheduler
 from collections import namedtuple
 from pip._vendor.retrying import retry
+from openpyxl import load_workbook
 
 ################# 配置区 ##############################################################################################
 domain = 'www.chuangjiawang.com'  # 网站地址 www.xxx.com
@@ -15,13 +16,19 @@ domain_index = 'http://www.chuangjiawang.com/admin/?index.html'  # 管理后台�
 username = 'admin'  # 后台管理用户名
 password = 'zgMPGiiYytigU0b'  # 后台管理密码
 
-images_path = '/root/tu01'  # 图片库路径目录
-db_file_name = '/root/auto/inventory_sku_20211223.txt'  # 读取的数据库文件的路径
-number_of_domain = 1  # 网站的序号，比如有10个网站，需要挂10个脚本，分别改为1、2、3...10
+# 图片配置
+# images_path = '/root/tu01'  # 图片库路径目录
+images_path = 'G:\地中海家装案例（70套 1493张 4.04G）\裁剪大小'  # 图片库路径目录
+# Excel配置
+excel_name = 'lawcdyc2.xlsm'
+sheet_name = 'Sheet1'
+# 替换的关键字
+replace_string = {'需要替换的文字': '替换后的文字', '_x000D_': '', }
 
 # 配置定时任务
 daily_task = 10  # 每天发布的文章数量
 job_time = '02:30'  # 每天的什么时候发布
+delay = 5  # 发布时间间隔的，比如间隔5秒发布一篇, 单位是秒
 ######################################################################################################################
 
 common_headers = """Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
@@ -289,50 +296,77 @@ class ArticleForm:
         return rep_text
 
 
-def analysis_line(line: str):
+def write_title_to_cache(num):
+    """缓存line"""
+    with open('cache', 'w') as file_ob:
+        file_ob.write(str(num))
+
+
+def read_title_from_cache():
+    """读取缓存line"""
+    try:
+
+        with open('cache', 'r') as file_ob:
+            num = file_ob.read()
+            num = int(num)
+    except Exception as e:
+        logger.info('no read_index_from_cache:{}'.format(e))
+        num = None
+    return num
+
+
+def analysis_line(line):
     """line eg.
-    397469	2021-11-05 16:43:42	台州装修首付一般付多少	台州装修	台州,装修,首付,一般,付,多少	关键还是看怎么谈，3-6成都有，按进度逐步付款。
+    A                   F
+    序号	时间	标题	标签	tag	内容
+1		台州70平米的服装装修大概多少钱	台州,70,平米,服装,大概,多少钱	台州,70,平米,服装,大概,多少钱	"必要店面现状，大备注，小项目，重整修需求，这个人才多是个人。</p>
+<p><p><br/></p><p><img src=""/images/tu01/Image_307.jpg""title=""台州70平米的服装装修大概多少钱""  alt=""台州70平米的服装装修大概多少钱""/></p><p><br/></p><p><strong>台州70平方米装修费用要多少哪里找这么大房子的装修案例？</strong></p><p>服装店</p>
     """
-    line = line.split()
-    id_ = line[0]
-    if not id_.isdigit():
-        raise Exception('id need be digit')
-    create_time = line[1] + '' + line[2]
-    title = line[3]
-    key_words = line[4]
-    tag = line[5]
-    content = ' '.join(line[6:])
-    if not content:
-        raise Exception('cant found content')
-    return LINE(id_, create_time, title, key_words, tag, content)
+
+    title = line[2].value  # 标题
+    key_words = line[3].value  # 标签
+    tag = line[4].value  # tag
+    content = line[5].value  # 内容
+    if title and key_words and tag and content:
+        for string, rep_string in replace_string.items():
+            title = title.replace(string, rep_string)
+            key_words = key_words.replace(string, rep_string)
+            tag = tag.replace(string, rep_string)
+            content = content.replace(string, rep_string)
+
+        return LINE('', '', title, key_words, tag, content)
+    else:
+        raise Exception('单元格内容为空，跳过')
 
 
-published_titles = {}  # 统计读取到的title和出现的次数
+def gen_read_inventory():
+    data = load_workbook(excel_name, read_only=True)  # 读取excel表
+    sheet = data[sheet_name]  # 读取表名
 
+    cache_row_index = read_title_from_cache()
+    gen_sheet = enumerate(sheet)
 
-def gen_read_inventory(file_name):
-    with open(file_name, 'r', encoding='utf-8') as file_handler:
+    next(gen_sheet)  # 跳过第一行： 序号	时间	标题	title	tag	内容
+
+    # 读取到上次暂停处
+    if cache_row_index:
         while True:
-            line = file_handler.readline()
-            if line:
-                try:
-                    line_ = analysis_line(line)  # 提取正确的一行
-
-                    published_titles.setdefault(line_.title, 0)  # 字典key不存在：这时增加key 值为1
-                    published_titles[line_.title] += 1
-
-                    if published_titles[line_.title] != number_of_domain:  # 未到自己的编号，跳过
-                        continue
-                except Exception as e:
-                    logger.error('read line err:{}'.format(e))
-                    continue
-                else:
-                    yield line_
-            else:
+            row_index, _ = next(gen_sheet)
+            if row_index == cache_row_index:
                 break
 
+    for row_index, sheet_line in gen_sheet:
+        try:
+            line_ = analysis_line(sheet_line)  # 提取正确的一行
+        except Exception as e:
+            logger.error('read line err:{}'.format(e))
+            continue
+        else:
+            write_title_to_cache(row_index)
+            yield line_
 
-gen_tasks = gen_read_inventory(db_file_name)
+
+gen_tasks = gen_read_inventory()
 
 
 # 最开始初始化一次空间略缩图
@@ -340,7 +374,7 @@ gen_tasks = gen_read_inventory(db_file_name)
 
 
 # 若出现错误，重试3次，每次间隔1小时
-@retry(stop_max_attempt_number=3, wait_fixed=1000 * 60 * 60)
+# @retry(stop_max_attempt_number=3, wait_fixed=1000 * 60 * 60)
 def job():
     for _ in range(daily_task):
         try:
@@ -352,13 +386,14 @@ def job():
             article.publish()
 
             # 休息1秒，减轻服务器压力
-            time.sleep(1)
+            time.sleep(delay)
         except StopIteration:
-            logger.info('{} 内的文章已经全部发布完成，请更新'.format(db_file_name))
+            logger.info('{} 内的文章已经全部发布完成，请更新'.format(excel_name))
     # 确保下次任务需要先登录
     SingletonATOKEN.__init_flag = False
 
 
+job()  # 第一次运行的时候，先发布一次
 job()  # 第一次运行的时候，先发布一次
 
 scheduler = BlockingScheduler()
